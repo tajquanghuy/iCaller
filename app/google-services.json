@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "761973413280",
+    "project_id": "icaller-85142",
+    "storage_bucket": "icaller-85142.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761973413280:android:aca1fdb6b246c632eb80c5",
+        "android_client_info": {
+          "package_name": "example.com.iCaller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761973413280-doh2g4bvgjumo2rfctq6plmh0pbjt6nh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "example.com.iCaller",
+            "certificate_hash": "e8a58a9d381aa4fa2941b4fa4f0fadcc4b4f5b69"
+          }
+        },
+        {
+          "client_id": "761973413280-9fd8vh8arb12a6ar2bde8u4dpet6q94r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiOlf8vDlWRUM2FTDsJ7QFc_JX7EesnP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761973413280-9fd8vh8arb12a6ar2bde8u4dpet6q94r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

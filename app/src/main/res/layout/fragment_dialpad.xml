@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.icaller_mobile.features.dialpad.DialpadViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="@dimen/_60sdp"
+        android:paddingEnd="@dimen/_60sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPhoneNumber"
+            style="@style/Body_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:background="@color/white"
+            android:focusable="false"
+            android:gravity="center"
+            android:hint="0336059740"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textColor="@color/color_black_light"
+            android:textSize="@dimen/_29ssp"
+            android:theme="@style/StyleEdittext"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:hint="Lợn Sữa"
+            android:maxLines="1"
+            android:textSize="@dimen/_17ssp"
+            app:layout_constraintTop_toBottomOf="@id/edtPhoneNumber" />
+
+        <View
+            android:id="@+id/viewOne"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_100sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_one"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewOne"
+            app:layout_constraintStart_toStartOf="@id/viewOne"
+            app:layout_constraintTop_toTopOf="@id/viewOne" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewOne"
+            app:layout_constraintStart_toStartOf="@id/viewOne"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberOne" />
+
+        <View
+            android:id="@+id/viewTwo"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewOne"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewOne" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_two"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewTwo"
+            app:layout_constraintStart_toStartOf="@id/viewTwo"
+            app:layout_constraintTop_toTopOf="@id/viewTwo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_two"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewTwo"
+            app:layout_constraintStart_toStartOf="@id/viewTwo"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberTwo" />
+
+        <View
+            android:id="@+id/viewThree"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewOne"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewOne" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_three"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewThree"
+            app:layout_constraintStart_toStartOf="@id/viewThree"
+            app:layout_constraintTop_toTopOf="@id/viewThree" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_three"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewThree"
+            app:layout_constraintStart_toStartOf="@id/viewThree"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberThree" />
+
+        <View
+            android:id="@+id/viewFour"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintStart_toStartOf="@id/viewOne"
+            app:layout_constraintTop_toBottomOf="@id/viewOne" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_four"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewFour"
+            app:layout_constraintStart_toStartOf="@id/viewFour"
+            app:layout_constraintTop_toTopOf="@id/viewFour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_four"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewFour"
+            app:layout_constraintStart_toStartOf="@id/viewFour"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberFour" />
+
+        <View
+            android:id="@+id/viewFive"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewFour"
+            app:layout_constraintEnd_toEndOf="@id/viewTwo"
+            app:layout_constraintStart_toStartOf="@id/viewTwo"
+            app:layout_constraintTop_toTopOf="@id/viewFour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_five"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewFive"
+            app:layout_constraintStart_toStartOf="@id/viewFive"
+            app:layout_constraintTop_toTopOf="@id/viewFive" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_five"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewFive"
+            app:layout_constraintStart_toStartOf="@id/viewFive"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberFive" />
+
+        <View
+            android:id="@+id/viewSix"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewFive"
+            app:layout_constraintEnd_toEndOf="@id/viewThree"
+            app:layout_constraintStart_toStartOf="@id/viewThree"
+            app:layout_constraintTop_toTopOf="@id/viewFive" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_six"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewSix"
+            app:layout_constraintStart_toStartOf="@id/viewSix"
+            app:layout_constraintTop_toTopOf="@id/viewSix" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_six"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewSix"
+            app:layout_constraintStart_toStartOf="@id/viewSix"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberSix" />
+
+        <View
+            android:id="@+id/viewSeven"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintEnd_toEndOf="@id/viewOne"
+            app:layout_constraintStart_toStartOf="@id/viewOne"
+            app:layout_constraintTop_toBottomOf="@id/viewFour" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_seven"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewSeven"
+            app:layout_constraintStart_toStartOf="@id/viewSeven"
+            app:layout_constraintTop_toTopOf="@id/viewSeven" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_seven"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewSeven"
+            app:layout_constraintStart_toStartOf="@id/viewSeven"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberSeven" />
+
+        <View
+            android:id="@+id/viewEight"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewSeven"
+            app:layout_constraintEnd_toEndOf="@id/viewFive"
+            app:layout_constraintStart_toStartOf="@id/viewFive"
+            app:layout_constraintTop_toTopOf="@id/viewSeven" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_eight"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewEight"
+            app:layout_constraintStart_toStartOf="@id/viewEight"
+            app:layout_constraintTop_toTopOf="@id/viewEight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_eight"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewEight"
+            app:layout_constraintStart_toStartOf="@id/viewEight"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberEight" />
+
+        <View
+            android:id="@+id/viewNine"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewEight"
+            app:layout_constraintEnd_toEndOf="@id/viewSix"
+            app:layout_constraintStart_toStartOf="@id/viewSix"
+            app:layout_constraintTop_toTopOf="@id/viewEight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_nine"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewNine"
+            app:layout_constraintStart_toStartOf="@id/viewNine"
+            app:layout_constraintTop_toTopOf="@id/viewNine" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_nine"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewNine"
+            app:layout_constraintStart_toStartOf="@id/viewNine"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberNine" />
+
+        <View
+            android:id="@+id/viewStar"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintEnd_toEndOf="@id/viewOne"
+            app:layout_constraintStart_toStartOf="@id/viewOne"
+            app:layout_constraintTop_toBottomOf="@id/viewSeven" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_star"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintBottom_toBottomOf="@id/viewStar"
+            app:layout_constraintEnd_toEndOf="@id/viewStar"
+            app:layout_constraintStart_toStartOf="@id/viewStar"
+            app:layout_constraintTop_toTopOf="@id/viewStar" />
+
+        <View
+            android:id="@+id/viewZeo"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewStar"
+            app:layout_constraintEnd_toEndOf="@id/viewEight"
+            app:layout_constraintStart_toStartOf="@id/viewEight"
+            app:layout_constraintTop_toTopOf="@id/viewStar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberZero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_zero"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewZeo"
+            app:layout_constraintStart_toStartOf="@id/viewZeo"
+            app:layout_constraintTop_toTopOf="@id/viewZeo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextZero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_text_zero"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="@id/viewZeo"
+            app:layout_constraintStart_toStartOf="@id/viewZeo"
+            app:layout_constraintTop_toBottomOf="@id/tvNumberZero" />
+
+        <View
+            android:id="@+id/viewHashtag"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_key_dialpad"
+            app:layout_constraintBottom_toBottomOf="@id/viewZeo"
+            app:layout_constraintEnd_toEndOf="@id/viewNine"
+            app:layout_constraintStart_toStartOf="@id/viewNine"
+            app:layout_constraintTop_toTopOf="@id/viewZeo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberHashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialpad_number_hashtag"
+            android:textColor="@drawable/text_dialpad_selector"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintBottom_toBottomOf="@id/viewHashtag"
+            app:layout_constraintEnd_toEndOf="@id/viewHashtag"
+            app:layout_constraintStart_toStartOf="@id/viewHashtag"
+            app:layout_constraintTop_toTopOf="@id/viewHashtag" />
+
+        <View
+            android:id="@+id/viewCall"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_oval_full"
+            app:layout_constraintEnd_toEndOf="@id/viewZeo"
+            app:layout_constraintStart_toStartOf="@id/viewZeo"
+            app:layout_constraintTop_toBottomOf="@id/viewZeo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_phone_white_1"
+            app:layout_constraintBottom_toBottomOf="@id/viewCall"
+            app:layout_constraintEnd_toEndOf="@id/viewCall"
+            app:layout_constraintStart_toStartOf="@id/viewCall"
+            app:layout_constraintTop_toTopOf="@id/viewCall" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_space"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_button_space"
+            app:layout_constraintBottom_toBottomOf="@id/viewCall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewCall" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

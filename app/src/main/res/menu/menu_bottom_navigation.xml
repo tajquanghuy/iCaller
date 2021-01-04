@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="@color/white">
+
+    <item
+        android:id="@+id/dialpad"
+        android:icon="@drawable/ic_dial"
+        android:title="@string/title_dialpad"
+        app:cnb_backgroundColor="@color/color_purple_transparent"
+        app:cnb_iconColor="@android:color/white"
+        app:cnb_textColor="@color/white" />
+
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/ic_history"
+        android:title="@string/title_history"
+
+        app:cnb_backgroundColor="@color/color_purple_transparent"
+        app:cnb_iconColor="@android:color/white"
+        app:cnb_textColor="@color/white" />
+
+    <item
+        android:id="@+id/contact"
+        android:icon="@drawable/contacts"
+        android:title="@string/title_contact"
+        app:cnb_backgroundColor="@color/color_purple_transparent"
+        app:cnb_iconColor="@android:color/white"
+        app:cnb_textColor="@color/white" />
+    <item
+        android:id="@+id/blockList"
+        android:icon="@drawable/ic_blocking"
+        android:title="@string/title_block"
+        app:cnb_backgroundColor="@color/color_purple_transparent"
+        app:cnb_iconColor="@android:color/white"
+        app:cnb_textColor="@color/white" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/title_setting"
+        app:cnb_backgroundColor="@color/color_purple_transparent"
+        app:cnb_iconColor="@android:color/white"
+        app:cnb_textColor="@color/white" />
+</menu>

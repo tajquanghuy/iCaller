@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_top_5sdp"
+        android:backgroundTint="@color/white"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_30sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgClose"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close_black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitleDescription"
+            style="@style/H6"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:lines="1"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:singleLine="true"
+            android:text="@string/Select_type_of_description"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/imgClose"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtAdvertising"
+            style="@style/Sub_Title_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_40sdp"
+            android:text="@string/advertising"
+            android:textColor="@color/color_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/flAdvertising"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleDescription" />
+
+        <FrameLayout
+            android:id="@+id/flAdvertising"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtAdvertising"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtAdvertising">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_red" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_warn_type_advertising"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_red_advertising" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgAdvertising"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAdvertising"
+            app:layout_constraintEnd_toEndOf="@id/txtAdvertising"
+            app:layout_constraintTop_toTopOf="@+id/txtAdvertising"
+            app:srcCompat="@drawable/ic_check_blue" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtFinancialService"
+            style="@style/Sub_Title_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="0dp"
+            android:text="@string/financial_service"
+            android:textColor="@color/color_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAdvertising" />
+
+        <FrameLayout
+            android:id="@+id/flFinancialService"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtFinancialService"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtFinancialService">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_red" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_warn_type_financial"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_red_financial_service" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFinancialService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFinancialService"
+            app:layout_constraintEnd_toEndOf="@id/txtFinancialService"
+            app:layout_constraintTop_toTopOf="@+id/txtFinancialService"
+            app:srcCompat="@drawable/ic_check_blue" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtLoan"
+            style="@style/Sub_Title_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="0dp"
+            android:text="@string/loan_collection"
+            android:textColor="@color/color_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFinancialService" />
+
+        <FrameLayout
+            android:id="@+id/flLoan"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtLoan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtLoan">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_red" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_warn_type_loan"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_red_loan_collection" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgLoan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLoan"
+            app:layout_constraintEnd_toEndOf="@id/txtLoan"
+            app:layout_constraintTop_toTopOf="@+id/txtLoan"
+            app:srcCompat="@drawable/ic_check_blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtScam"
+            style="@style/Sub_Title_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="0dp"
+            android:text="@string/scam"
+            android:textColor="@color/color_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLoan" />
+
+        <FrameLayout
+            android:id="@+id/flScam"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtScam"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtScam">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_red" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_warn_type_scam"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_red_scam" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgScam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txtScam"
+            app:layout_constraintEnd_toEndOf="@id/txtScam"
+            app:layout_constraintTop_toTopOf="@+id/txtScam"
+            app:srcCompat="@drawable/ic_check_blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRealEstate"
+            style="@style/Sub_Title_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="0dp"
+            android:text="@string/real_estate"
+            android:textColor="@color/color_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtScam" />
+
+        <FrameLayout
+            android:id="@+id/flRealEstate"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtRealEstate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtRealEstate">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_red" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_warn_type_estate"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_red_real_estate" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgRealEstate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txtRealEstate"
+            app:layout_constraintEnd_toEndOf="@id/txtRealEstate"
+            app:layout_constraintTop_toTopOf="@+id/txtRealEstate"
+            app:srcCompat="@drawable/ic_check_blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtOther"
+            style="@style/Sub_Title_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingEnd="0dp"
+            android:text="@string/other"
+            android:textColor="@color/color_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRealEstate" />
+
+        <FrameLayout
+            android:id="@+id/flOther"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/txtOther"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtOther">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_red" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_warn_type_other"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_red_other" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txtOther"
+            app:layout_constraintEnd_toEndOf="@id/txtOther"
+            app:layout_constraintTop_toTopOf="@+id/txtOther"
+            app:srcCompat="@drawable/ic_check_blue" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

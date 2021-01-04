@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.icaller_mobile.common.widget.dialog.ContentDialog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+
+        <View
+            android:id="@+id/bgTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_end_call_not_spam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="@+id/bgTitle"
+            app:layout_constraintTop_toTopOf="@+id/bgTitle"
+            app:srcCompat="@drawable/ic_close_white" />
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="@id/txtCaller"
+            app:layout_constraintEnd_toStartOf="@id/txtCaller"
+            app:layout_constraintTop_toBottomOf="@id/imgClose"
+            app:srcCompat="@drawable/ic_while_icaller" />
+
+        <TextView
+            android:id="@+id/txtCaller"
+            style="@style/Body_1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/txtiCaller"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@id/imgLogo"
+            app:layout_constraintEnd_toEndOf="@id/imgClose"
+            app:layout_constraintTop_toTopOf="@id/imgLogo" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/Sub_Title_1"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="start"
+            android:text="@{viewModel.title}"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgLogo"
+            app:layout_constraintEnd_toStartOf="@+id/imgLogo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgClose"
+            app:layout_constraintVertical_bias="0.511" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

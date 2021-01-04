@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.icaller_mobile.features.block_contact.CreateBlockContactViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/_16sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_name"
+                style="@style/Body_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/key_name"
+                android:textAllCaps="true"
+                android:textColor="@color/color_purple_dark"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_purple_dark"
+                android:hint="@string/key_name"
+                android:inputType="text"
+                android:text="@={viewModel.nameLiveData}"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/cursor_purple"
+                android:textSize="@dimen/_11ssp"
+                android:theme="@style/EdtBlockStyle"
+                app:layout_constraintTop_toBottomOf="@id/text_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_phone"
+                style="@style/Body_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/key_phone_number"
+                android:textAllCaps="true"
+                android:textColor="@color/color_purple_dark"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/edt_name" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_purple_dark"
+                android:digits="0123456789+-()*#"
+                android:hint="@string/key_phone_number"
+                android:inputType="phone"
+                android:maxLength="20"
+                android:text="@={viewModel.phoneLiveData}"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/cursor_purple"
+                android:textSize="@dimen/_11ssp"
+                android:theme="@style/EdtBlockStyle"
+                app:layout_constraintTop_toBottomOf="@id/text_phone" />
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/text_description"-->
+            <!--                style="@style/Body_1"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/_30sdp"-->
+            <!--                android:text="@string/description"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@color/color_purple_dark"-->
+            <!--                android:textSize="@dimen/_11ssp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/edt_phone" />-->
+
+            <View
+                android:id="@+id/viewVVV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bg_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_phone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTypeOfDescription"
+                style="@style/Body_1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:gravity="center"
+                android:hint="@string/select_description"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/color_red_dark"
+                app:layout_constraintBottom_toBottomOf="@id/viewVVV"
+                app:layout_constraintEnd_toEndOf="@id/viewVVV"
+                app:layout_constraintStart_toStartOf="@id/viewVVV"
+                app:layout_constraintTop_toTopOf="@id/viewVVV" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgDescription"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/viewVVV"
+                app:layout_constraintEnd_toStartOf="@+id/txtTypeOfDescription"
+                app:layout_constraintTop_toTopOf="@id/viewVVV"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bg_button_save_purple"
+                android:onClick="@{() -> viewModel.saveBlockContact()}"
+                android:text="@string/key_SAVE"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/viewVVV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_5sdp">
+
+    <View
+        android:id="@+id/viewUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_170sdp"
+        android:background="@drawable/bg_data_update"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_update_spammer"
+        style="@style/Body_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/update_top_spammers"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_updating_list"
+        style="@style/Body_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/updating_this_list"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toStartOf="@+id/text_update_spammer"
+        app:layout_constraintTop_toBottomOf="@+id/text_update_spammer" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_update"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_button_update"
+        android:text="@string/update"
+        android:textAllCaps="true"
+        android:textColor="@color/color_red_dark"
+        app:layout_constraintStart_toStartOf="@id/text_updating_list"
+        app:layout_constraintTop_toBottomOf="@id/text_updating_list" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_version_data_update"
+        style="@style/Body_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/data"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toStartOf="@id/btn_update"
+        app:layout_constraintTop_toBottomOf="@id/btn_update" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_app_icon"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:src="@drawable/ic_while_icaller"
+        app:layout_constraintBottom_toBottomOf="@id/text_app_name"
+        app:layout_constraintEnd_toStartOf="@id/text_app_name"
+        app:layout_constraintTop_toTopOf="@id/text_app_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_app_name"
+        style="@style/Body_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_update"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

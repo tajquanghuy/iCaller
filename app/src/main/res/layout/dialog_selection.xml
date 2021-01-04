@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.icaller_mobile.common.widget.dialog.ContentDialog" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_parrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/layout_title"
+                    layout="@layout/dialog_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:viewModel="@{viewModel}" />
+
+                <View
+                    android:id="@+id/bgContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_120sdp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_title" />
+
+                <TextView
+                    android:id="@+id/txtMessage"
+                    style="@style/Sub_Title_1"
+                    text="@{viewModel.message}"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/btnStart"
+                    app:layout_constraintEnd_toEndOf="@+id/btnEnd"
+                    app:layout_constraintStart_toStartOf="@+id/btnStart"
+                    app:layout_constraintTop_toTopOf="@+id/bgContent" />
+
+
+                <Button
+                    android:id="@+id/btnStart"
+                    style="@style/Button_Line"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textColor="@color/color_purple_light"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/bg_button_line_purple"
+                    app:layout_constraintBottom_toBottomOf="@+id/bgContent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnEnd"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:text="@{viewModel.textStartButton}" />
+
+                <Button
+                    android:id="@+id/btnEnd"
+                    style="@style/Button_Full"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/bg_rectangle_full_15sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnStart"
+                    app:layout_constraintTop_toTopOf="@+id/btnStart"
+                    app:text="@{viewModel.textEndButton}" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

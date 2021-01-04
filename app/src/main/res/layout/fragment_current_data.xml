@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.icaller_mobile.features.current_data.CurrentDataViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_version_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_number_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@id/text_version_data"
+            app:layout_constraintTop_toBottomOf="@id/text_version_data" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_page_downloading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@id/text_version_data"
+            app:layout_constraintTop_toBottomOf="@id/text_number_data" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

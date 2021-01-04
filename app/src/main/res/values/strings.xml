@@ -1,0 +1,324 @@
+<resources>
+    <string name="app_name">iCaller</string>
+
+    <string name="key_icaller">iCaller</string>
+    <string name="fm_setting_history">History</string>
+
+    <string name="facebook_app_id" translatable="false">575110759701467</string>
+    <string name="adUnitId_scr_history" translatable="false">ca-app-pub-3495243441483561/7489911000</string>
+    <string name="adUnitId_scr_contact_list" translatable="false">ca-app-pub-3495243441483561/1116074342</string>
+    <string name="adUnitId_scr_spam_configuration" translatable="false">ca-app-pub-3495243441483561/2429156015</string>
+    <string name="adUnitId_scr_add_black_list" translatable="false">ca-app-pub-3495243441483561/5344746352</string>
+    <string name="adUnitId_scr_setting" translatable="false">ca-app-pub-3495243441483561/5536318043</string>
+    <string name="adUnitId_scr_call_log_detail" translatable="false">ca-app-pub-3495243441483561/1980216414</string>
+    <string name="adUnitId_scr_after_call" translatable="false">ca-app-pub-3495243441483561/4103483736</string>
+
+    <string name="dialpad_number_one" translatable="false">1</string>
+    <string name="dialpad_number_two" translatable="false">2</string>
+    <string name="dialpad_text_two" translatable="false">a b c</string>
+    <string name="dialpad_number_three" translatable="false">3</string>
+    <string name="dialpad_text_three" translatable="false">d e f</string>
+    <string name="dialpad_number_four" translatable="false">4</string>
+    <string name="dialpad_text_four" translatable="false">g h i</string>
+    <string name="dialpad_number_five" translatable="false">5</string>
+    <string name="dialpad_text_five" translatable="false">j k l</string>
+    <string name="dialpad_number_six" translatable="false">6</string>
+    <string name="dialpad_text_six" translatable="false">m n o</string>
+    <string name="dialpad_number_seven" translatable="false">7</string>
+    <string name="dialpad_text_seven" translatable="false">p q r s</string>
+    <string name="dialpad_number_eight" translatable="false">8</string>
+    <string name="dialpad_text_eight" translatable="false">t u v</string>
+    <string name="dialpad_number_nine" translatable="false">9</string>
+    <string name="dialpad_text_nine" translatable="false">w x y z</string>
+    <string name="dialpad_number_star" translatable="false">*</string>
+    <string name="dialpad_number_zero" translatable="false">0</string>
+    <string name="dialpad_number_hashtag" translatable="false">#</string>
+    <string name="dialpad_text_zero" translatable="false">+</string>
+
+    <string name="loading" translatable="false">Loading</string>
+    <string name="key_privacy_policy_no_trans" translatable="false">Privacy Policy</string>
+    <string name="key_tou_no_trans" translatable="false">Terms of Service</string>
+    <string name="welcome_to_no_trans" translatable="false">Welcome to iCaller</string>
+
+    <string name="accept_and_continue" translatable="false">Accept and continue</string>
+    <string name="description_button_term" translatable="false">Click Accept and continue to agree to our Privacy Policy and Terms of Service</string>
+    <string name="content_welcome_to" translatable="false">Please take sometime to review the key points of our Privacy Policy and Terms of Service</string>
+    <string name="data_process" translatable="false">Data we process</string>
+    <string name="content_data_process" translatable="false">When You create a user profile in the Services and confirm being the holder of a certain number, iCaller will collect the information provided by You. In order to create a user profile, You must register Your first name, last name and phone number. Additional information that may be provided at Your option include, but is not limited to, photo, gender, and zip code
+        \n\nWhen You install and use the Services, we collect and process your personal data such as name, phone, number, etc. and information about your activity when using our services, such as your device information, contact list information, phone number query record.</string>
+    <string name="how_we_use_your_data" translatable="false">How we use your data</string>
+    <string name="content_how_use_data" translatable="false">Situations in which your data will be used are listed in our Privacy policy. We use your data for the following purposes:\n
+    -	In order to provide the services iCaller offers (including but not limited to phone number recognition) and to respond to your phone number query requests, we collect your contactlist information, profile data and the information granted to us when you access our services (including but not limited to your name and phone number).\n
+    -	We use your data to optimize user experience and develop anti-spam technologies &amp; services.\n
+    -	In order to optimize our services, your personal data will be compiled into anonymous statistical analysis information by virtue of the de-identification technology and non-personally identifiable information.\n
+    -	In order to provide more robust product features, we request you to provide the aforementioned access permissions. You may cancel or refuse to grant such permissions at any time, but you will not be able to enjoy the full range of product features afterwards.</string>
+
+
+    <string name="key_speaker">Loa</string>
+    <string name="key_keypad">Bàn phím</string>
+    <string name="key_mic_not_active">Tắt âm</string>
+    <string name="key_mic_active">Mic</string>
+    <string name="key_hide">Ẩn</string>
+    <string name="INCOMING">Cuộc gọi đã nhận</string>
+    <string name="OUTCOMING">"Cuộc gọi đi "</string>
+    <string name="MISSED">Gọi nhỡ</string>
+    <string name="key_Today">Hôm nay</string>
+    <string name="key_yesterday">Hôm qua</string>
+    <string name="msg_no_internet_access">Not Internet</string>
+    <string name="key_end_call">Kết thúc</string>
+    <string name="key_FAQ">Câu hỏi thường gặp</string>
+    <string name="key_settings">Cài  đặt</string>
+    <string name="key_delete">Xóa</string>
+    <string name="key_new_contact">Liên hệ mới</string>
+    <string name="key_info">Thông tin</string>
+    <string name="key_sign_in">Đăng nhập</string>
+    <string name="key_enter_your_phone_number">Nhập số điện thoại của bạn</string>
+    <string name="key_enter_your_password">Nhập mật khẩu của bạn</string>
+    <string name="key_cancel">Hủy</string>
+    <string name="key_about">Giới thiệu</string>
+    <string name="key_privacy_policy">Điều khoản bảo mật</string>
+    <string name="key_logout">Đăng xuất</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="key_others">Khác</string>
+    <string name="key_phone_number">Số điện thoại</string>
+    <string name="key_password">Mật khẩu</string>
+    <string name="key_ok">OK</string>
+    <string name="key_reset_password">Đặt lại mật khẩu</string>
+    <string name="key_please_check_your_network_connection">Hãy kiểm tra lại kết nối mạng</string>
+    <string name="key_no_data">Không có dữ liệu</string>
+    <string name="key_cannot_delete_contact">Không thể xoá liên hệ</string>
+    <string name="key_you_sure_want_to_delete_this_contact">Bạn có chắc muốn xoá liên hệ này không?</string>
+    <string name="key_contacts_access_denied">Không được phép truy cập danh bạ\nHay cho phép trong thiết lập ứng dụng</string>
+    <string name="key_cannot_get_device_contacts">Không lấy được thông tin danh bạ của thiết bị</string>
+    <string name="key_your_session_was_expired">Phiên làm việc hết hạn\nHãy đăng nhập lại</string>
+    <string name="key_un_identified_error">Lỗi chưa xác định\nHãy thử lại sau</string>
+    <string name="key_unauthorized">Chưa đăng nhập</string>
+    <string name="key_invalid_user">Tài khoản không hợp lệ</string>
+    <string name="key_invalid_phone_number">Số điện thoại không hợp lệ</string>
+    <string name="key_enter_phone_number">Nhập số điện thoại</string>
+    <string name="key_invalid_username_or_password">Tên người dùng hoặc mật khẩu không đúng</string>
+    <string name="key_password_reseting_failed">Đặt lại mật khẩu không thành công\nHãy thử lại sau</string>
+    <string name="key_your_password_has_been_reset">Mật khẩu đã được đặt lại\nHãy kiểm tra SMS để lấy mật khẩu mới</string>
+    <string name="key_under_development">Đang phát triển</string>
+    <string name="key_cannot_logout">Không đăng xuất được\nHãy thử lại sau</string>
+    <string name="key_do_you_really_want_to_logout">Bạn có chắc muốn đăng xuất khỏi iCaller?</string>
+    <string name="key_RESET">ĐẶT LẠI</string>
+    <string name="key_SIGN_IN">ĐĂNG NHẬP</string>
+    <string name="key_RESET_PASSWORD">ĐẶT LẠI MẬT KHẨU</string>
+    <string name="key_BLOCKED">Danh sách chặn</string>
+    <string name="key_block_list_search">Danh sách chặn (%1$d)</string>
+    <string name="key_search">Tìm</string>
+    <string name="key_CONTACTS">DANH BẠ</string>
+    <string name="key_device_list_search">DANH BẠ (%1$d)</string>
+    <string name="key_SETTINGS">CÀI ĐẶT</string>
+    <string name="key_reset_request_password">Đặt lại / Yêu cầu mật khẩu</string>
+    <string name="key_app_version">Phiên bản %1$s</string>
+    <string name="key_choose_number_to_dial">Chọn số để gọi</string>
+    <string name="key_history">Lịch sử cuộc gọi</string>
+    <string name="key_SEND">GỬI</string>
+    <string name="key_NO">KHÔNG</string>
+    <string name="key_phone_password_not_true">Số điện thoại hoặc Mật khẩu không đúng !</string>
+    <string name="key_YES">Đồng ý</string>
+    <string name="key_reset_password_success">Đặt lại mật khẩu thành công !</string>
+    <string name="key_are_you_sure_you_want_to_logout">Bạn có chắc chắn bạn muốn đăng xuất?</string>
+    <string name="key_call_with">Gọi bằng</string>
+    <string name="key_always_use_this_for_calls">Luôn sử dụng SIM này để gọi</string>
+    <string name="key_calling">Đang gọi</string>
+    <string name="key_no_sim_card_or_sim_card_error">Không có thẻ SIM hoặc thẻ SIM lỗi.</string>
+    <string name="key_ending_calling">Đang kết thúc cuộc gọi</string>
+    <string name="key_version">Phiên bản</string>
+    <string name="key_loading">Đang tải</string>
+    <string name="key_answer">Trả lời</string>
+    <string name="key_user_busy">Người dùng bận</string>
+    <string name="key_exit_application">Thoát ứng dụng</string>
+    <string name="key_Are_you_sure_you_want_to_exit">" Bạn có chắc bạn muốn thoát?"</string>
+    <string name="key_unknown">Không xác định</string>
+    <string name="key_dual_sim">Hai SIM</string>
+    <string name="key_ask_every_time">Luôn hỏi</string>
+    <string name="key_ask_draw"><![CDATA[Bật thiết lập <b>Hiển thị trên ứng dụng khác</b> để có thể hiển thị thông tin liên hệ iCaller khi có cuộc gọi]]></string>
+    <string name="key_ask_draw_miui"><![CDATA[Bật thiết lập <b>Hiển thị cửa sổ pop-up</b> và <b>Hiển thị cửa sổ pop-up khi chạy trong nền</b> để có thể hiển thị thông tin liên hệ iCaller khi có cuộc gọi]]></string>
+    <string name="key_no_service">Không có dịch vụ nào</string>
+    <string name="request_permission">Cho phép</string>
+    <string name="key_title_goto_permission"><b>iCaller</b> không có quyền gọi điện thoại.\nĐể thực hiện cuộc gọi, hãy truy cập <b>Cài đặt</b> và cho phép</string>
+    <string name="key_never_contact">iCaller không có quyền truy cập danh bạ. Hãy truy cập <b>Settings</b> và cho phép</string>
+    <string name="key_never_storage">iCaller không có quyền truy cập bộ nhớ. Hãy truy cập <b>Settings</b> và cho phép</string>
+    <string name="key_never_callLog">Để xem Nhật ký cuộc gọi và thông tin liên lạc khi có cuộc gọi đến / đi\n<b>iCaller</b> cần có quyền truy cập <b>Nhật ký cuộc gọi</b> và <b>quản lý cuộc gọi</b>\nVui lòng cho phép trong <b>Cài đặt</b></string>
+    <string name="key_security">Bảo vệ</string>
+    <string name="key_draw_settings">Tối ưu hoá trải nghiệm iCaller</string>
+    <string name="key_icaller_call">Cuộc gọi iCaller</string>
+    <string name="key_icaller_calls">Cuộc gọi</string>
+    <string name="key_Incoming_call">Cuộc gọi đến</string>
+    <string name="key_Outcoming_call">Cuộc gọi đi</string>
+    <string name="key_Missed_call">Cuộc gọi nhỡ</string>
+    <string name="key_calllog_permission">iCaller không có quyền truy cập lịch sử và quản lý cuộc gọi</string>
+    <string name="key_contact_permission">iCaller không có quyền truy cập danh bạ máy</string>
+    <string name="key_faq_draw">Hiển thị trên ứng dụng khác</string>
+    <string name="key_faq_draw_miui">Hiển thị cửa sổ pop-up &amp; Hiển thị cửa sổ pop-up khi chạy trong nền</string>
+    <string name="key_allow">Cho phép</string>
+    <!--    <string name="key_permission_info">Ứng dụng cần quyền điện thoại mặc định, lịch sử cuộc gọi và danh bạ để xác định và hiển thị tên, phòng ban người dùng <b>iCaller</b> khi có cuộc gọi tới\nMọi thông tin thu thập đều chỉ được lưu trên máy người dùng mà không được chia sẻ với bất cứ ai</string>-->
+    <string name="key_permission_info">Ứng dụng cần quyền lịch sử cuộc gọi, danh bạ và bộ nhớ để xác định và hiển thị tên, phòng ban người dùng <b>iCaller</b> khi có cuộc gọi tới\nMọi thông tin thu thập đều chỉ được lưu trên máy người dùng mà không được chia sẻ với bất cứ ai</string>
+    <string name="key_permanent_denied">Hãy kích hoạt các quyền liên quan đến <b>Cuộc gọi</b> và <b>Danh bạ</b> trong <b>Cài đặt</b></string>
+    <string name="key_continue">Tiếp tục</string>
+    <string name="key_name">Tên</string>
+    <string name="key_SAVE">LƯU</string>
+    <string name="key_block_number">Chặn số</string>
+    <string name="key_missing_phone_name">Hãy nhập tên và số điện thoại</string>
+    <string name="key_block_success">Đã thêm số vào danh sách chặn</string>
+    <string name="key_block_fail">Số chưa được thêm vào danh sách chặn</string>
+    <string name="key_unblock">Bỏ chặn</string>
+    <string name="key_number_unblocked">Đã bỏ chặn</string>
+    <string name="key_start">Bắt đầu</string>
+    <string name="key_welcome_caller_ID">Chào mừng bạn đến với iCaller</string>
+    <string name="key_phone_smarter_no_spam">Ứng dụng hiện thông tin người gọi và chặn cuộc gọi rác</string>
+    <string name="key_enter_keyword">Nhập từ khóa</string>
+    <string name="key_not_spam">KHÔNG PHẢI SPAM</string>
+    <string name="key_block">"Chặn "</string>
+    <string name="blocking">Đang chặn</string>
+    <string name="key_tou">Điều khoản sử dụng</string>
+    <string name="key_report">Báo cáo</string>
+    <string name="PASSWORD">MẬT KHẨU</string>
+    <string name="PHONE_NUMBER">SỐ ĐIỆN THOẠI</string>
+    <string name="SIGN_UP">ĐĂNG KÝ</string>
+    <string name="YOUR_NAME">HỌ TÊN</string>
+    <string name="text_head_number_vn">+84</string>
+    <string name="SIGN_IN">ĐĂNG NHẬP</string>
+    <string name="error_your_name">Nhập tên của bạn</string>
+    <string name="error_phone_number">Nhập số điện thoại</string>
+    <string name="error_password">Nhập mật khẩu</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="create_a_new_account">Đăng ký tài khoản mới</string>
+    <string name="forgot_password_underline"><u>Quên mật khẩu</u></string>
+    <string name="create_a_new_account_underline"><u>Đăng ký tài khoản mới</u></string>
+    <string name="BLOCK">CHẶN</string>
+    <string name="block_and_report">Báo cáo &amp; Chặn</string>
+    <string name="REPORT">BÁO CÁO</string>
+    <string name="choose_type_of_spam">Lựa chọn:</string>
+    <string name="advertising">Quảng cáo</string>
+    <string name="financial_service">Cho vay</string>
+    <string name="loan_collection">Đòi nợ</string>
+    <string name="scam">Lừa đảo</string>
+    <string name="real_estate">Bất động sản</string>
+    <string name="other">Khác</string>
+    <string name="report_spam_success">Báo cáo thành công.</string>
+    <string name="report_spam_fail">Báo cáo không thành công.</string>
+    <string name="update_success">Đã cập nhật xong.</string>
+    <string name="update_fail">Cập nhật lỗi.</string>
+    <string name="update">Cập nhật</string>
+    <string name="updating">Đang cập nhật</string>
+    <string name="sign_in_fail">Đăng nhập thất bại.</string>
+    <string name="add_tag">Thêm</string>
+    <string name="view">Xem</string>
+    <string name="call">Gọi</string>
+    <string name="message">Nhắn tin</string>
+    <string name="enter_name">Tên của bạn</string>
+    <string name="please_enter_your_full_name">Vui lòng nhập tên đầy đủ của bạn</string>
+    <string name="full_name">Họ tên</string>
+    <string name="update_top_spammers">Cập nhật danh sách bị chặn</string>
+    <string name="updating_this_list">Nhận danh sách cập nhật các số spam được báo cáo gần nhất để phát hiện chúng nhanh chóng ngay cả khi ngoại tuyến. Cập nhật danh sách này thường xuyên.</string>
+    <string name="your_database_is_ready">Dữ liệu đã cập nhật mới nhất.</string>
+    <string name="lastest_update">Lần cập nhật cuối cùng: </string>
+    <string name="day_ago">ngày trước.</string>
+    <string name="today">hôm nay</string>
+    <string name="welcome_to">Chào mừng bạn tới iCaller</string>
+    <string name="icaller_spam_blocking_app">Ứng dụng chặn cuộc gọi rác</string>
+    <string name="update_profile_success">Đã lưu thông tin cá nhân.</string>
+    <string name="update_profile_fail">Sửa thông tin cá nhân thất bại.</string>
+    <string name="unknown">Không xác định</string>
+    <string name="mobile">Di động</string>
+    <string name="phone">Cố định</string>
+    <string name="update_data">Cập nhật dữ liệu</string>
+    <string name="data">Dữ liệu %1$s</string>
+    <string name="waiting">Xin chờ…</string>
+
+    <string name="call_received">Nhận cuộc gọi</string>
+    <string name="minute_ago">phút trước.</string>
+    <string name="hour">giờ</string>
+    <string name="minute">phút</string>
+    <string name="call_received_min_ago">Nhận cuộc gọi %1$s trước</string>
+    <string name="call_away_min_ago">Thực hiện cuộc gọi %1$s trước</string>
+    <string name="hour_ago">giờ trước.</string>
+    <string name="do_you_think_this_is_spam">Bạn có nghĩ đây là số rác?</string>
+    <string name="not_spam">Không phải</string>
+    <string name="spam">Số rác</string>
+    <string name="is_this_name_correct">Tên này có đúng không?</string>
+    <string name="incorrect">Không đúng</string>
+    <string name="correct">Đúng</string>
+    <string name="you_answered_this_number">Bạn đã trả lời số này </string>
+    <string name="time"> lần.</string>
+    <string name="times"> lần.</string>
+    <string name="tell_us_who_this_is">Hãy cho chúng tôi biết đây là ai?</string>
+    <string name="who_is_this">Đây là ai?</string>
+    <string name="report_as_spam">Báo cáo số rác</string>
+    <string name="nicely_done">Hoàn thành !</string>
+    <string name="thanks_you_for_helping">Cảm ơn bạn đã giúp chúng tôi tạo ra một trải nghiệm gọi điện tốt hơn!</string>
+    <string name="update_name">Thay đổi tên</string>
+    <string name="current_data"><u>Phiên bản hiện tại</u></string>
+    <string name="version">Phiên bản</string>
+    <string name="id_lastest">ID</string>
+    <string name="number">Số lượng</string>
+    <string name="description">Loại</string>
+    <string name="profile">Chi tiết</string>
+    <string name="call_details">Chi tiết cuộc gọi</string>
+    <string name="name_contact"><![CDATA[<font color=#D3D3D3>&lt;Tên liên lạc&gt;</font>]]></string>
+    <string name="block_setting">Cài đặt chặn số</string>
+    <string name="block_setting_scam">Chặn các số lừa đảo, đòi nợ</string>
+    <string name="block_setting_advertising">Chặn các số quảng cáo</string>
+    <string name="block_setting_out_contact">Chặn các số không có trong danh bạ</string>
+    <string name="block_setting_foreign_number">Chặn các số nước ngoài</string>
+    <string name="foreign_network">Số nước ngoài</string>
+    <string name="not_in_contact">Ngoài danh bạ</string>
+    <string name="foreign_number">Số nước ngoài</string>
+    <string name="call_blocked"><![CDATA[<font color=#717171>Cuộc gọi bị chặn</font> <font color=#000000>%1$s</font>]]></string>
+    <string name="reason_blocked"><![CDATA[<font color=#717171>Lý do: %1$s</font>]]></string>
+    <string name="reason_scam">Đây là số lừa đảo.</string>
+    <string name="reason_advertising">Đây là số quảng cáo.</string>
+    <string name="reason_not_in_contact">Số điện thoại không có trong danh bạ.</string>
+    <string name="reason_foreign">Số điện thoại nước ngoài.</string>
+    <string name="updating_data">iCaller đang cập nhập dữ liệu…</string>
+    <string name="enter_name_spammer">Hãy nhập tên người làm phiền</string>
+    <string name="please_select_the_type_of_spam">Hãy chọn loại spam</string>
+    <string name="possibility_of_scam">Khả năng lừa đảo cao</string>
+    <string name="error">Lỗi</string>
+    <string name="received_message">Received Message</string>
+    <string name="select_country">Chọn quốc gia</string>
+    <string name="search_hint">Tìm kiếm&#8230;</string>
+    <string name="no_result_found">Không có kết quả nào</string>
+    <string name="resend_verification_code"><![CDATA[<u>Gửi lại mã xác nhận.</u>]]></string>
+    <string name="valid_code"><![CDATA[Mã xác nhận có giá trị trong <u>%1$d</u> giây]]></string>
+    <string name="error_verification_code">Mã xác nhận không chính xác</string>
+    <string name="auto_retrieval_timed_out">Đã hết thời gian truy xuất tự động</string>
+    <string name="package_one_year">1 năm</string>
+    <string name="off_percent"><![CDATA[<small>Giảm</small> <b><font size=20>%d&#x0025;</font><b>]]></string>
+    <string name="unit_currency_package">vnđ/năm</string>
+    <string name="price_package_one_month">%s/tháng</string>
+    <string name="buy">mua</string>
+    <string name="Select_type_of_description">Lựa chọn danh mục</string>
+    <string name="logout" translatable="false">LOG OUT</string>
+    <string name="logout_confirm" translatable="false">Are you sure you want to logout?</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <string name="ok" translatable="false">LOG OUT</string>
+    <string name="txtiCaller" translatable="false">iCaller</string>
+    <string name="select_description">Chọn mục</string>
+    <string name="title_dialpad">Bàn phím</string>
+    <string name="title_history">Lịch sử</string>
+    <string name="title_contact">Danh bạ</string>
+    <string name="title_block">Danh sách</string>
+    <string name="title_setting">Cài đặt</string>
+    <string name="navigation_settings">CÀI ĐẶT</string>
+    <string name="title_profile">thông tin</string>
+    <string name="dialog_confirm">Xác nhận</string>
+    <string name="dialog_block">Xác nhận chặn số?</string>
+    <string name="dialog_unblocked">Bỏ chặn</string>
+    <string name="notify_dismiss">Bỏ qua</string>
+    <string name="notify_login_fail">Bạn cần thêm số điện thoại</string>
+    <string name="title_verification_fail">Xác minh lỗi</string>
+    <string name="content_verification_fail">Xác minh lỗi mã đăng nhập</string>
+    <string name="otp_is_empty">Mã xác minh trống</string>
+    <string name="content_empty_otp">Vui lòng điền mã OTP</string>
+    <string name="error_user_unprocessable" translatable="false">Unprocessable Entity</string>
+    <string name="error_internal_server" translatable="false">Internal Server Error</string>
+    <!--    <string name="accept_and_continue">Đồng ý và tiếp tục</string>-->
+    <!--    <string name="description_button_term">Chọn Đồng ý và tiếp tục với Điều khoản bảo mật và Điều khoản sử dụng của chúng tôi</string>-->
+
+
+</resources>

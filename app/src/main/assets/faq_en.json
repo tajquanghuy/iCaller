@@ -1,0 +1,50 @@
+[
+    {
+        "question": "What is iCaller app?",
+        "answer": "iCaller provides a fully functional phone feature. Calls,Anti-Spam, all in one app to manage your calls!\n\nIdentify unknown calls:\nOnly pick up important calls by knowing who’s calling!\n\nBlock spam calls:\nAvoid disturbing quality time by blocking spam calls.\n\n*Please set iCaller as your default phone app to activate this service."
+    },
+    {
+        "question": "Who can use iCaller app?",
+        "answer": "Anyone who install iCaller app properly."
+    },
+    {
+        "question": "How to register iCaller?",
+        "answer": "Install iCaller app properly."
+    },
+    {
+        "question": "How to install and configure to use all functions of iCaller?",
+        "answer": "• After installing and starting app > Accept app for accessing your phone book.\n• To show device phone book, go to Settings section > scroll down and choose iCaller app > turn on the permission for accessing phone book.\n• You turn on function Display over other apps to show ID of incoming call."
+    },
+    {
+        "question": "Why does not my app's screen display caller’s name?",
+        "answer": "To display caller’s name on incoming call, user have to turn Display over other apps on your phone."
+    },
+    {
+        "question": "Which operating systems are supported by iCaller app?",
+        "answer": "iCaller app is compatible with devices using the operating system Android 6.0 and above and 10.0 or higher for IOS devices."
+    },
+    {
+        "question": "What are the advantages of using iCaller service?",
+        "answer": "iCaller provides a fully functional phone feature. Calls,Anti-Spam, all in one app to manage your calls."
+    },
+    {
+        "question": "Where can I download iCaller app?",
+        "answer": "You can download the iCaller app from the Google Play app store or Apple Store."
+    },
+    {
+        "question": "How to access iCaller app?",
+        "answer": "Install iCaller app properly."
+    },
+    {
+        "question": "Why does not iCaller app display my phone book?",
+        "answer": "To display phone book to app, you need to allow iCaller app to access your phone book according to the instructions:\n• For iPhone, go to Settings section > scroll down and choose iCaller app > turn on the permission for accessing phone book.\n• For Android phones: go to settings section > select application management > choose iCaller app > turn on the permission for accessing phone book."
+    },
+    {
+        "question": "I use 2 sims, how can I choose the right sim of iCaller?",
+        "answer": "There are 2 ways (choosing sim using iCaller is the default sim)\n• Settings > mobile data > default voice line > select iCaller sim\n• Open the iphone call > press the number to call > select iCaller sim to make a call."
+    },
+    {
+        "question": "Do I have internet connection to use this app?",
+        "answer": "NO. user still can use service without internet access. However, icaller need internet connection to update spam list."
+    }
+]
