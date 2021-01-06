@@ -44,6 +44,9 @@ public class CallStateReceiver extends BroadcastReceiver {
                     (TelephonyManager) context.getSystemService(Service.TELEPHONY_SERVICE);
             switch (tm.getCallState()) {
                 case TelephonyManager.CALL_STATE_RINGING:
+
+                    Logger.log("tesst git");
+
                     incomingFlag = true;
                     incoming_number = intent.getStringExtra("incoming_number");
                     Logger.log("CALL_STATE_RINGING - " + incoming_number);
