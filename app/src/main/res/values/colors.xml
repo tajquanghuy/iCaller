@@ -385,4 +385,6 @@
     <color name="color_background_notification">#F34949</color>
     <color name="color_text_dismiss_notification">#B63737</color>
 
+    <color name="color_grey">#E7EBEF</color>
+
 </resources>

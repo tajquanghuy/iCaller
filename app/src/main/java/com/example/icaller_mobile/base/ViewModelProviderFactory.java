@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.icaller_mobile.features.after_call.AfterCallViewModel;
 import com.example.icaller_mobile.features.authenticate.LoginViewModel;
 import com.example.icaller_mobile.features.block_contact.CreateBlockContactViewModel;
 import com.example.icaller_mobile.features.block_detail.DetailContactViewModel;
@@ -67,6 +68,9 @@ public class ViewModelProviderFactory extends ViewModelProvider.NewInstanceFacto
         } else if (modelClass.isAssignableFrom(ContactsViewModel.class)) {
             //noinspection unchecked
             return (T) new ContactsViewModel(context);
+        }else if (modelClass.isAssignableFrom(AfterCallViewModel.class)) {
+            //noinspection unchecked
+            return (T) new AfterCallViewModel(context);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }

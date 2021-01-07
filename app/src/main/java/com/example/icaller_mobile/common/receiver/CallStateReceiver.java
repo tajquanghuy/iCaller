@@ -8,6 +8,7 @@ import android.telephony.TelephonyManager;
 
 import com.example.icaller_mobile.common.constants.IntentConstants;
 import com.example.icaller_mobile.common.utils.Logger;
+import com.example.icaller_mobile.features.after_call.AfterCallActivity;
 import com.example.icaller_mobile.features.popup.CallInfoOverlay;
 import com.example.icaller_mobile.model.callbacks.CallBacks;
 
@@ -33,7 +34,6 @@ public class CallStateReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Logger.log("onReceive");
-        Logger.log("TEST GIT");
         callInfoOverlay = CallInfoOverlay.newInstance(context);
         mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL)) {
@@ -45,15 +45,11 @@ public class CallStateReceiver extends BroadcastReceiver {
                     (TelephonyManager) context.getSystemService(Service.TELEPHONY_SERVICE);
             switch (tm.getCallState()) {
                 case TelephonyManager.CALL_STATE_RINGING:
-
-                    Logger.log("tesst git");
-                    Logger.log("tesst git 1");
-
                     incomingFlag = true;
                     incoming_number = intent.getStringExtra("incoming_number");
                     Logger.log("CALL_STATE_RINGING - " + incoming_number);
-                    Intent intent1 = new Intent(context, CallInfoOverlay.class);
-                    intent1.putExtra(IntentConstants.KEY_PHONE_NUMBER, incoming_number);
+                    Intent itCallInfoOverlay = new Intent(context, CallInfoOverlay.class);
+                    itCallInfoOverlay.putExtra(IntentConstants.KEY_PHONE_NUMBER, incoming_number);
                     callInfoOverlay.onExtractCallerInformation(incoming_number);
                     break;
                 case TelephonyManager.CALL_STATE_OFFHOOK:
@@ -66,6 +62,8 @@ public class CallStateReceiver extends BroadcastReceiver {
                         Logger.log("CALL_STATE_IDLE - " + incoming_number);
                         callInfoOverlay.onDestroyOverPlay(incoming_number);
                     }
+                    Intent itAfterCall = new Intent(context, AfterCallActivity.class);
+                    context.startActivity(itAfterCall);
                     break;
             }
         }
