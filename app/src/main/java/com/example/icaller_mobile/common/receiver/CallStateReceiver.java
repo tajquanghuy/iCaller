@@ -33,6 +33,7 @@ public class CallStateReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Logger.log("onReceive");
+        Logger.log("TEST GIT");
         callInfoOverlay = CallInfoOverlay.newInstance(context);
         mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL)) {
