@@ -21,7 +21,10 @@ public interface BlockContactDAO {
     Observable<List<BlockContact>> getAllBlockContact();
 
     @Query("SELECT * FROM tbl_block_contact WHERE phone_number =:phone ")
-    Observable<List<BlockContact>> getContactDevice(String phone);
+    Observable<List<BlockContact>> getListContactLocal(String phone);
+
+    @Query("SELECT * FROM tbl_block_contact WHERE phone_number =:phone ")
+    Observable<BlockContact> getContactLocal(String phone);
 
     @Delete
     Single<Integer> delete(BlockContact contact);

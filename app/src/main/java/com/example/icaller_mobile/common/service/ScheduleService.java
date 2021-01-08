@@ -13,7 +13,7 @@ import com.example.icaller_mobile.common.utils.Utils;
 import com.example.icaller_mobile.interfaces.GetNumberPhoneDBCallBack;
 import com.example.icaller_mobile.model.network.ServiceHelper;
 import com.example.icaller_mobile.model.network.response.NumberContactBlockResponse;
-import com.example.icaller_mobile.model.report.ScheduleReceiver;
+import com.example.icaller_mobile.common.receiver.ScheduleReceiver;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;

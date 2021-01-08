@@ -1,5 +1,6 @@
 package com.example.icaller_mobile.features.main;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
@@ -93,6 +94,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     private void onClickItemBottomNavigation() {
         binding.bottomNavigation.setOnItemSelectedListener(position -> {
             switch (position) {
@@ -139,6 +141,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

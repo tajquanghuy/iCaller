@@ -1,4 +1,4 @@
-package com.example.icaller_mobile.model.report;
+package com.example.icaller_mobile.common.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

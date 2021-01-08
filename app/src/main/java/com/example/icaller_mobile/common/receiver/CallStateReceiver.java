@@ -63,6 +63,7 @@ public class CallStateReceiver extends BroadcastReceiver {
                         callInfoOverlay.onDestroyOverPlay(incoming_number);
                     }
                     Intent itAfterCall = new Intent(context, AfterCallActivity.class);
+                    itAfterCall.putExtra(IntentConstants.KEY_PHONE_NUMBER,incoming_number);
                     context.startActivity(itAfterCall);
                     break;
             }

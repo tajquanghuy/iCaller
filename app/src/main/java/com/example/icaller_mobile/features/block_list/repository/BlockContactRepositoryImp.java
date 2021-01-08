@@ -33,7 +33,14 @@ public class BlockContactRepositoryImp implements BlockContactRepository {
 
     @Override
     public Observable<List<BlockContact>> getContactDevice(String phone) {
-        return blockContactDAO.getContactDevice(phone)
+        return blockContactDAO.getListContactLocal(phone)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Observable<BlockContact> getContactLocal(String phone) {
+        return blockContactDAO.getContactLocal(phone)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

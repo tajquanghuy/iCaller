@@ -45,7 +45,7 @@ public class BlockListViewModel extends BaseViewModel {
     public void getContactByPhoneNumber(String phone) {
         BlockContactDB blockContactDB = BlockContactDB.getDatabase(context.get());
         BlockContactDAO blockContactDAO = blockContactDB.blockContactDAO();
-        Disposable disposable = blockContactDAO.getContactDevice(phone)
+        Disposable disposable = blockContactDAO.getListContactLocal(phone)
                 .subscribe(contact -> {
                     int a = 1;
                 }, throwable -> {

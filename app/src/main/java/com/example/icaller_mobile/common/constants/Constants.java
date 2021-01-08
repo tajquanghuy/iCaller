@@ -6,6 +6,10 @@ import android.os.Environment;
 
 import com.example.icaller_mobile.R;
 
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 public class Constants {
     public static final String CONNECTION_SERVICE_ID = "vn.grooo.iCallerConnectionServiceID";
     public static final String CONNECTION_SERVICE_PHONE_ACCOUNT = "vn.grooo.iCallerConnectionServicePhoneAccount";
@@ -29,6 +33,8 @@ public class Constants {
     public static final int TIME_AUTO_CLOSE_DIALOG = 5000;
     public static final String SAMPLE_ALIAS = "app_cowater";
     public static String PHONENUMBER = "";
+    public static final String dateDefault = "2020-01-01 00:00:00";
+    public static final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withZone(DateTimeZone.getDefault());
 
     public static String API_TOKEN;
 

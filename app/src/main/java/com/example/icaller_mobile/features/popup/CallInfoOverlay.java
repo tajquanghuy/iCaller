@@ -132,7 +132,7 @@ public class CallInfoOverlay implements CallBacks {
         String mobileNetwork = PhoneNumberManager.getInstance(context).getNetworkMobile(phoneNumber) == null ? context.getString(R.string.unknown) : (context.getString(R.string.mobile) + " - " + PhoneNumberManager.getInstance(context).getNetworkMobile(phoneNumber));
         String displayName;
         int warn;
-        // Danh bạ
+        // Contact
         IContactObject contactDevice = ContactManager.getDefault().getDeviceContact(phoneNumber);
         if (contactDevice != null) {
             displayName = (contactDevice.getName() == null || Utils.isEmpty(contactDevice.getName())) ? Utils.Number(phoneNumber) : contactDevice.getName();
@@ -195,14 +195,14 @@ public class CallInfoOverlay implements CallBacks {
                     showPopUp();
                 }
 
-                // Trong app
+                // Local
                 @Override
                 public void getUserFromDevice(BlockContact blockContact) {
                     Utils.endCall(context);
                 }
 
 
-                // Số lạ
+                // Unknow number
                 @Override
                 public void getUnknowUser() {
                     binding.viewBackGround.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_end_call_not_spam));

@@ -13,6 +13,8 @@ public interface BlockContactRepository {
 
     Observable<List<BlockContact>> getContactDevice(String phone);
 
+    Observable<BlockContact> getContactLocal(String phone);
+
     Maybe<Long> insert(BlockContact blockContact);
 
     Single<Integer> delete(BlockContact blockContact);
