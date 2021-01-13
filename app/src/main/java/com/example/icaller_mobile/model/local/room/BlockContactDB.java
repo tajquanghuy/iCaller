@@ -6,8 +6,13 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.commonsware.cwac.saferoom.SQLCipherUtils;
+import com.commonsware.cwac.saferoom.SafeHelperFactory;
+
 import com.example.icaller_mobile.model.network.room.DataBean;
 import com.example.icaller_mobile.model.network.room.DataBeanDAO;
+
+import java.io.IOException;
 
 @Database(entities = {BlockContact.class, DataBean.class}, version = 1, exportSchema = false)
 public abstract class BlockContactDB extends RoomDatabase {
@@ -20,8 +25,15 @@ public abstract class BlockContactDB extends RoomDatabase {
             synchronized (BlockContactDB.class) {
                 if (instance == null) {
                     instance = Room.databaseBuilder(context.getApplicationContext(), BlockContactDB.class, "db_contact_block")
+                            .openHelperFactory(new SafeHelperFactory("123456".toCharArray()))
                             .allowMainThreadQueries()
                             .build();
+                    try {
+                        SQLCipherUtils.encrypt(context.getApplicationContext(),"db_contact_block","123456".toCharArray());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 }
             }
         }

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -20,6 +21,8 @@ import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.manager.SharedPreferencesManager;
 import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.common.utils.Utils;
+import com.example.icaller_mobile.model.encode.Crypto;
+import com.example.icaller_mobile.model.encode.KeyManager;
 import com.example.icaller_mobile.model.network.RetrofitClient;
 import com.example.icaller_mobile.model.network.ServiceApi;
 import com.example.icaller_mobile.model.network.ServiceHelper;
@@ -31,7 +34,14 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -135,6 +145,12 @@ public class GetDBService extends Service {
     }
 
     public void getDB(Context context, String id, String updatedAt, int limit) {
+        String key = "12345678909876543212345678909876";
+        String iv = "1234567890987654";
+        KeyManager km = new KeyManager(getApplicationContext());
+        km.setIv(iv.getBytes());
+        km.setId(key.getBytes());
+
         final String SORT_BY = "id";
         final String DIRECTION = "asc";
         final String COUNTRY_CODE = SharedPreferencesManager.getDefault(context).getCountryCodeWithPlus();
@@ -156,11 +172,14 @@ public class GetDBService extends Service {
                         String idDelete = contactReportResponse.getPhone_deleted();
                         if (size > limit || size == limit) {
                             List<DataBean> dataBeanList = contactReportResponse.getData();
+
+                            //Save to Roomdb
                             Disposable disposable1 = dataBeanRepository.insertAll(dataBeanList)
                                     .subscribe(Logger::log
                                             , throwable -> {
                                                 Logger.log(dataBeanList);
                                             });
+
                             String id = String.valueOf(dataBeanList.get(limit - 1).getId());
                             String strUpdatedAt = dataBeanList.get(limit - 1).getUpdatedAt();
                             SharedPreferencesManager.getDefault(context).saveDateUpdateData(strUpdatedAt);
@@ -169,7 +188,6 @@ public class GetDBService extends Service {
                             stopServices(context);
                         } else {
                             List<DataBean> dataBeanList = contactReportResponse.getData();
-
                         }
                     }
                 }, throwable -> {

@@ -8,7 +8,6 @@ import android.telephony.TelephonyManager;
 
 import com.example.icaller_mobile.common.constants.IntentConstants;
 import com.example.icaller_mobile.common.utils.Logger;
-import com.example.icaller_mobile.features.after_call.AfterCallActivity;
 import com.example.icaller_mobile.features.popup.CallInfoOverlay;
 import com.example.icaller_mobile.model.callbacks.CallBacks;
 
@@ -62,9 +61,9 @@ public class CallStateReceiver extends BroadcastReceiver {
                         Logger.log("CALL_STATE_IDLE - " + incoming_number);
                         callInfoOverlay.onDestroyOverPlay(incoming_number);
                     }
-                    Intent itAfterCall = new Intent(context, AfterCallActivity.class);
-                    itAfterCall.putExtra(IntentConstants.KEY_PHONE_NUMBER,incoming_number);
-                    context.startActivity(itAfterCall);
+//                    Intent itAfterCall = new Intent(context, AfterCallActivity.class);
+//                    itAfterCall.putExtra(IntentConstants.KEY_PHONE_NUMBER,incoming_number);
+//                    context.startActivity(itAfterCall);
                     break;
             }
         }
