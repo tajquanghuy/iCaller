@@ -265,8 +265,7 @@ public class SQLCipherUtils {
         File.createTempFile("sqlcipherutils", "tmp",
           ctxt.getCacheDir());
       SQLiteDatabase db=
-        SQLiteDatabase.openDatabase(originalFile.getAbsolutePath(),
-          passphrase, null, SQLiteDatabase.OPEN_READWRITE, null, null);
+        SQLiteDatabase.openDatabase(originalFile.getAbsolutePath(), passphrase, null, SQLiteDatabase.OPEN_READWRITE, null, null);
 
       final SQLiteStatement st=db.compileStatement("ATTACH DATABASE ? AS plaintext KEY ''");
 

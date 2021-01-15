@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.lifecycle.MutableLiveData;
 
+import com.commonsware.cwac.saferoom.SQLCipherUtils;
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.manager.SharedPreferencesManager;
@@ -33,6 +34,7 @@ import com.example.icaller_mobile.model.network.room.DatabeanRepositoryImp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -172,14 +174,17 @@ public class GetDBService extends Service {
                         String idDelete = contactReportResponse.getPhone_deleted();
                         if (size > limit || size == limit) {
                             List<DataBean> dataBeanList = contactReportResponse.getData();
-
                             //Save to Roomdb
                             Disposable disposable1 = dataBeanRepository.insertAll(dataBeanList)
                                     .subscribe(Logger::log
                                             , throwable -> {
                                                 Logger.log(dataBeanList);
                                             });
-
+                            try {
+                                SQLCipherUtils.encrypt(context.getApplicationContext(),"db_contact_block",context.getText(R.string.key_decrypt_room_db).toString().toCharArray());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             String id = String.valueOf(dataBeanList.get(limit - 1).getId());
                             String strUpdatedAt = dataBeanList.get(limit - 1).getUpdatedAt();
                             SharedPreferencesManager.getDefault(context).saveDateUpdateData(strUpdatedAt);

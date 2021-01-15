@@ -29,11 +29,6 @@ public abstract class BlockContactDB extends RoomDatabase {
                             .openHelperFactory(new SafeHelperFactory(context.getText(R.string.key_decrypt_room_db).toString().toCharArray()))
                             .allowMainThreadQueries()
                             .build();
-                    try {
-                        SQLCipherUtils.encrypt(context.getApplicationContext(),"db_contact_block",context.getText(R.string.key_decrypt_room_db).toString().toCharArray());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
 
                 }
             }

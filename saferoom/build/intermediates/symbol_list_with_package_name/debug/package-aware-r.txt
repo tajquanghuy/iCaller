@@ -1,4 +1,5 @@
 com.commonsware.cwac.saferoom
+string key_decrypt_room_db
 string library_android_database_sqlcipher_author
 string library_android_database_sqlcipher_authorWebsite
 string library_android_database_sqlcipher_isOpenSource

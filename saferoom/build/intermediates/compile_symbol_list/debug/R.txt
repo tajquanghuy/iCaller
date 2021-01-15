@@ -1,3 +1,4 @@
+int string key_decrypt_room_db 0x0
 int string library_android_database_sqlcipher_author 0x0
 int string library_android_database_sqlcipher_authorWebsite 0x0
 int string library_android_database_sqlcipher_isOpenSource 0x0
