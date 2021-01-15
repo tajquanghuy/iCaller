@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.commonsware.cwac.saferoom.SQLCipherUtils;
 import com.example.icaller_mobile.BR;
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseActivity;
@@ -15,12 +16,18 @@ import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.constants.FragmentTag;
 import com.example.icaller_mobile.common.service.GetDBService;
+import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.databinding.ActivityMainBinding;
 import com.example.icaller_mobile.features.block_list.BlockListFragment;
 import com.example.icaller_mobile.features.contacts.ContactsFragment;
 import com.example.icaller_mobile.features.dialpad.DialpadFragment;
 import com.example.icaller_mobile.features.history.HistoryFragment;
 import com.example.icaller_mobile.features.settings.SettingsFragment;
+
+import net.sqlcipher.database.SQLiteDatabase;
+
+import java.io.File;
+import java.io.IOException;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> implements View.OnClickListener {
     @Override
@@ -48,10 +55,23 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding.bottomNavigation.setItemSelected(R.id.blockList, true);
+        initializeSQLCipher();
         push(BlockListFragment.newInstance(), FragmentTag.FRAGMENT_BLOCKED);
         onClickItemBottomNavigation();
         GetDBService.getDefault(getApplicationContext()).startServiceDB(getApplicationContext());
 
+    }
+
+
+    private void initializeSQLCipher() {
+        SQLiteDatabase.loadLibs(this);
+        File databaseFile = getDatabasePath("db_contact_block");
+        try {
+            SQLCipherUtils.decrypt(this, databaseFile, getText(R.string.key_decrypt_room_db).toString().toCharArray());
+            Logger.log("Database", "decryptDatabase: " + SQLCipherUtils.getDatabaseState(databaseFile));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -56,6 +56,7 @@ public class CreateBlockContactViewModel extends BaseViewModel {
         KeyManager km = new KeyManager(mContext);
         km.setIv(iv.getBytes());
         km.setId(key.getBytes());
+
         String phoneNumber = phoneLiveData.getValue().replace(" ", "").trim();
         if (nameLiveData.getValue() == null || phoneNumber == null) {
             ConfirmDialog confirmDialog = new ConfirmDialog(mContext, mContext.getString(R.string.error),
@@ -88,26 +89,26 @@ public class CreateBlockContactViewModel extends BaseViewModel {
             if (typeDescription.getValue() == null) {
                 BlockContact contact = new BlockContact(nameLiveData.getValue(), phoneNumber, 7);
 
-                String encrypted_Data = "data";
-                String data = contact.getName();
-                try {
-                    Crypto crypto = new Crypto(mContext);
-                    encrypted_Data = crypto.armorEncrypt(data.getBytes());
-                } catch (InvalidKeyException e) {
-                    Logger.log("SE3", "Exception in StoreData: " + e.getMessage());
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (NoSuchAlgorithmException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (NoSuchPaddingException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (IllegalBlockSizeException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (BadPaddingException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (InvalidAlgorithmParameterException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                }
-                contact.setName(encrypted_Data);
+//                String encrypted_Data = "data";
+//                String data = contact.getName();
+//                try {
+//                    Crypto crypto = new Crypto(mContext);
+//                    encrypted_Data = crypto.armorEncrypt(data.getBytes());
+//                } catch (InvalidKeyException e) {
+//                    Logger.log("SE3", "Exception in StoreData: " + e.getMessage());
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (NoSuchAlgorithmException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (NoSuchPaddingException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (IllegalBlockSizeException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (BadPaddingException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (InvalidAlgorithmParameterException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                }
+//                contact.setName(encrypted_Data);
 
                 ConfirmDialog confirmDialog = new ConfirmDialog(mContext, mContext.getString(R.string.dialog_block),
                         mContext.getString(R.string.key_block_success),
@@ -129,26 +130,26 @@ public class CreateBlockContactViewModel extends BaseViewModel {
                 confirmDialog.show();
             } else {
                 BlockContact contact = new BlockContact(nameLiveData.getValue(), phoneNumber, typeDescription.getValue().getType());
-                String encrypted_Data = "data";
-                String data = contact.getName();
-                try {
-                    Crypto crypto = new Crypto(mContext);
-                    encrypted_Data = crypto.armorEncrypt(data.getBytes());
-                } catch (InvalidKeyException e) {
-                    Logger.log("SE3", "Exception in StoreData: " + e.getMessage());
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (NoSuchAlgorithmException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (NoSuchPaddingException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (IllegalBlockSizeException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (BadPaddingException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                } catch (InvalidAlgorithmParameterException e) {
-                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
-                }
-                contact.setName(encrypted_Data);
+//                String encrypted_Data = "data";
+//                String data = contact.getName();
+//                try {
+//                    Crypto crypto = new Crypto(mContext);
+//                    encrypted_Data = crypto.armorEncrypt(data.getBytes());
+//                } catch (InvalidKeyException e) {
+//                    Logger.log("SE3", "Exception in StoreData: " + e.getMessage());
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (NoSuchAlgorithmException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (NoSuchPaddingException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (IllegalBlockSizeException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (BadPaddingException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                } catch (InvalidAlgorithmParameterException e) {
+//                    Log.e("SE3", "Exception in StoreData: " + e.getMessage());
+//                }
+//                contact.setName(encrypted_Data);
                 ConfirmDialog confirmDialog = new ConfirmDialog(mContext, mContext.getString(R.string.dialog_block),
                         mContext.getString(R.string.key_block_success),
                         mContext.getString(R.string.key_ok),

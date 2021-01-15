@@ -10,6 +10,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
+import com.commonsware.cwac.saferoom.SQLCipherUtils;
 import com.example.icaller_mobile.BR;
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
@@ -31,8 +32,11 @@ import com.example.icaller_mobile.features.settings.settings_logout.DialogOnclic
 import com.example.icaller_mobile.interfaces.ContactBlockOnClickListener;
 import com.example.icaller_mobile.model.local.room.BlockContact;
 
+import net.sqlcipher.database.SQLiteDatabase;
+
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -109,7 +113,6 @@ public class BlockListFragment extends BaseFragment<FragmentBlockListBinding, Bl
         binding.rvContact.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
         binding.rvContact.setHasFixedSize(true);
         binding.rvContact.setAdapter(itemBlockContactAdapter);
-
         itemBlockContactAdapter.setListener(this);
         mViewModel.getAllBlockContact();
     }
