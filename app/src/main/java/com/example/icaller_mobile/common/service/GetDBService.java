@@ -180,11 +180,11 @@ public class GetDBService extends Service {
                                             , throwable -> {
                                                 Logger.log(dataBeanList);
                                             });
-                            try {
+                            /*try {
                                 SQLCipherUtils.encrypt(context.getApplicationContext(),"db_contact_block",context.getText(R.string.key_decrypt_room_db).toString().toCharArray());
                             } catch (IOException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
                             String id = String.valueOf(dataBeanList.get(limit - 1).getId());
                             String strUpdatedAt = dataBeanList.get(limit - 1).getUpdatedAt();
                             SharedPreferencesManager.getDefault(context).saveDateUpdateData(strUpdatedAt);

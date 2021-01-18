@@ -53,7 +53,6 @@ public class CallInfoOverlay implements CallBacks {
     }
 
     public CallInfoOverlay(Context context) {
-
         String number = "";
         Logger.log(number);
         this.context = context;

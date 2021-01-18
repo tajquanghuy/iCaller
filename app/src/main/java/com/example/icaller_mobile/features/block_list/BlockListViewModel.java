@@ -24,7 +24,6 @@ import io.reactivex.disposables.Disposable;
 public class BlockListViewModel extends BaseViewModel {
     private BlockContactRepository repository;
     public MutableLiveData<List<BlockContact>> listBlockContact = new MutableLiveData<>();
-    public MutableLiveData<BlockContact> blockContacts = new MutableLiveData<>();
 
 
     public BlockListViewModel(Context context) {
