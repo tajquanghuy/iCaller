@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
-import com.example.icaller_mobile.common.components.stickylistview.StickyHeaderAdapter;
-import com.example.icaller_mobile.common.components.stickylistview.StickyHeadersItemDecoration;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.utils.ContactManager;
 import com.example.icaller_mobile.databinding.FragmentContactsBinding;
@@ -23,11 +21,11 @@ import java.util.List;
 
 public class ContactsFragment extends BaseFragment<FragmentContactsBinding, ContactsViewModel> {
     private ItemContactsAdapter itemContactsAdapter;
-    private ContactsViewModel mViewModel;
+    //    private ContactsViewModel mViewModel;
     private Context mContext;
     private List<IContactObject> contactObject;
-    private StickyHeadersItemDecoration stickyHeadersItemDecoration;
-    private StickyHeaderAdapter stickyHeaderAdapter;
+//    private StickyHeadersItemDecoration stickyHeadersItemDecoration;
+//    private StickyHeaderAdapter stickyHeaderAdapter;
 
     public static ContactsFragment newInstance() {
         return new ContactsFragment();
@@ -79,6 +77,7 @@ public class ContactsFragment extends BaseFragment<FragmentContactsBinding, Cont
         binding.rvContacts.setHasFixedSize(true);
         itemContactsAdapter.updateData(contactObject);
         binding.rvContacts.setAdapter(itemContactsAdapter);
+        loadData();
 //        stickyHeaderAdapter = new StickyHeaderAdapter(new ArrayList<>());
 //        stickyHeadersItemDecoration = new StickyHeadersBuilder()
 //                .setAdapter(itemContactsAdapter)
@@ -86,6 +85,35 @@ public class ContactsFragment extends BaseFragment<FragmentContactsBinding, Cont
 //                .setStickyHeadersAdapter(stickyHeaderAdapter)
 //                .build();
 //        binding.rvContacts.addItemDecoration(stickyHeadersItemDecoration);
+    }
+
+    private void loadData() {
+        boolean isLoading = ContactManager.getDefault().getDeviceContactAsync();
+        if (itemContactsAdapter.getItemCount() == 0) {
+            updateViews(isLoading);
+        }
+    }
+
+    private void updateViews(boolean isLoading) {
+        if (isLoading) {
+            binding.progressBar.setVisibility(View.VISIBLE);
+            binding.imgNoPermission.setVisibility(View.GONE);
+            binding.textNoData.setVisibility(View.GONE);
+        } else {
+            binding.progressBar.setVisibility(View.GONE);
+            binding.imgNoPermission.setVisibility(View.VISIBLE);
+            binding.textNoData.setVisibility(View.VISIBLE);
+
+            if (ContactManager.getDefault().isContactAccessible()) {
+                binding.imgNoPermission.setVisibility(View.GONE);
+            } else {
+                binding.textNoData.setVisibility(View.GONE);
+            }
+
+            if (itemContactsAdapter.getItemCount() > 0) {
+                binding.textNoData.setVisibility(View.GONE);
+            }
+        }
     }
 
     private void reLoad(List<IContactObject> contacts) {

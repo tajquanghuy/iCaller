@@ -10,12 +10,10 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
-import com.commonsware.cwac.saferoom.SQLCipherUtils;
 import com.example.icaller_mobile.BR;
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
-import com.example.icaller_mobile.common.components.stickylistview.StickyHeadersItemDecoration;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.constants.FragmentTag;
 import com.example.icaller_mobile.common.constants.IntentConstants;
@@ -24,7 +22,6 @@ import com.example.icaller_mobile.common.event.MessageEvent;
 import com.example.icaller_mobile.common.manager.SharedPreferencesManager;
 import com.example.icaller_mobile.common.widget.dialog.ConfirmDialog;
 import com.example.icaller_mobile.databinding.FragmentBlockListBinding;
-import com.example.icaller_mobile.features.block_contact.BlockedContactHeaderAdapter;
 import com.example.icaller_mobile.features.block_contact.ItemBlockContactAdapter;
 import com.example.icaller_mobile.features.block_detail.DetailContactFragment;
 import com.example.icaller_mobile.features.main.MainViewModel;
@@ -32,11 +29,8 @@ import com.example.icaller_mobile.features.settings.settings_logout.DialogOnclic
 import com.example.icaller_mobile.interfaces.ContactBlockOnClickListener;
 import com.example.icaller_mobile.model.local.room.BlockContact;
 
-import net.sqlcipher.database.SQLiteDatabase;
-
 import org.greenrobot.eventbus.EventBus;
 
-import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -45,8 +39,8 @@ public class BlockListFragment extends BaseFragment<FragmentBlockListBinding, Bl
     private ItemBlockContactAdapter itemBlockContactAdapter;
     private MainViewModel mainViewModel;
     private Context mContext;
-    private BlockedContactHeaderAdapter stickyHeaderAdapter;
-    private StickyHeadersItemDecoration stickyHeadersItemDecoration;
+//    private BlockedContactHeaderAdapter stickyHeaderAdapter;
+//    private StickyHeadersItemDecoration stickyHeadersItemDecoration;
 
 
     public static BlockListFragment newInstance() {
@@ -110,9 +104,9 @@ public class BlockListFragment extends BaseFragment<FragmentBlockListBinding, Bl
 
     private void initializeViews() {
         itemBlockContactAdapter = new ItemBlockContactAdapter(mContext);
-        binding.rvContact.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
-        binding.rvContact.setHasFixedSize(true);
-        binding.rvContact.setAdapter(itemBlockContactAdapter);
+        binding.rvContacts.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
+        binding.rvContacts.setHasFixedSize(true);
+        binding.rvContacts.setAdapter(itemBlockContactAdapter);
         itemBlockContactAdapter.setListener(this);
         mViewModel.getAllBlockContact();
     }

@@ -240,11 +240,9 @@ public class ContactManager {
     }
 
     public boolean getDeviceContactAsync() {
-
         if (!isContactAccessible()) {
             return false;
         }
-
         executor.execute(() -> {
             List<IContactObject> contacts = getAllDeviceContacts();
             EventBus.getDefault().postSticky(ContactEventFactory.createDeviceContactReadyEvent(contacts));
@@ -366,11 +364,8 @@ public class ContactManager {
             }
             c.close();
         }
-
         Collections.sort(contacts, (o1, o2) -> o1.getGroup().compareTo(o2.getGroup()));
-
         contacts.addAll(otherGroup);
-
         return contacts;
     }
 

@@ -14,8 +14,10 @@ import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseActivity;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
+import com.example.icaller_mobile.common.constants.FirebaseConstants;
 import com.example.icaller_mobile.common.constants.FragmentTag;
 import com.example.icaller_mobile.common.service.GetDBService;
+import com.example.icaller_mobile.common.utils.LogEvents;
 import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.databinding.ActivityMainBinding;
 import com.example.icaller_mobile.features.block_list.BlockListFragment;
@@ -76,7 +78,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 e.printStackTrace();
             }
         }
-        int a =1;
     }
 
     @Override
@@ -97,6 +98,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 binding.layoutToolbar.imgSearch.setImageResource(R.drawable.ic_search_purple);
                 binding.layoutToolbar.imgSearch.setVisibility(View.VISIBLE);
                 binding.layoutToolbar.txtTitleToolbar.setVisibility(View.VISIBLE);
+                binding.layoutToolbar.imgSearch.setOnClickListener(v -> {
+
+                });
                 break;
             case OnlyText:
                 binding.layoutToolbar.imgBack.setVisibility(View.GONE);
@@ -118,6 +122,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         }
     }
 
+
+    private void openSearchView() {
+        SearchFragmentContactDevice fragment = new SearchFragmentContactDevice();
+        push(fragment, Constants.FragmentTag.FRAGMENT_SEARCH, false);
+    }
 
     @SuppressLint("NonConstantResourceId")
     private void onClickItemBottomNavigation() {
