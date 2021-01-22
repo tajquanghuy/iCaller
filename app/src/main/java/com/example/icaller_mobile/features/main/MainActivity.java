@@ -1,7 +1,10 @@
 package com.example.icaller_mobile.features.main;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -14,16 +17,16 @@ import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseActivity;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
-import com.example.icaller_mobile.common.constants.FirebaseConstants;
 import com.example.icaller_mobile.common.constants.FragmentTag;
 import com.example.icaller_mobile.common.service.GetDBService;
-import com.example.icaller_mobile.common.utils.LogEvents;
 import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.databinding.ActivityMainBinding;
 import com.example.icaller_mobile.features.block_list.BlockListFragment;
 import com.example.icaller_mobile.features.contacts.ContactsFragment;
 import com.example.icaller_mobile.features.dialpad.DialpadFragment;
 import com.example.icaller_mobile.features.history.HistoryFragment;
+import com.example.icaller_mobile.features.ocr_machine.TextRecognitionFragment;
+import com.example.icaller_mobile.features.search_contacts.SearchContactsFragment;
 import com.example.icaller_mobile.features.settings.SettingsFragment;
 
 import net.sqlcipher.database.SQLiteDatabase;
@@ -99,7 +102,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 binding.layoutToolbar.imgSearch.setVisibility(View.VISIBLE);
                 binding.layoutToolbar.txtTitleToolbar.setVisibility(View.VISIBLE);
                 binding.layoutToolbar.imgSearch.setOnClickListener(v -> {
-
+                    openSearchView();
                 });
                 break;
             case OnlyText:
@@ -108,9 +111,46 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 binding.layoutToolbar.txtTitleToolbar.setVisibility(View.VISIBLE);
                 break;
             case None:
+                binding.layoutToolbar.viewBG.setVisibility(View.GONE);
                 binding.layoutToolbar.imgBack.setVisibility(View.INVISIBLE);
                 binding.layoutToolbar.imgSearch.setVisibility(View.INVISIBLE);
                 binding.layoutToolbar.txtTitleToolbar.setVisibility(View.INVISIBLE);
+                break;
+            case SearchBar:
+                binding.layoutToolbar.imgBack.setImageResource(R.drawable.ic_arrow_back_purple_24dp);
+                binding.layoutToolbar.imgBack.setVisibility(View.VISIBLE);
+                binding.layoutToolbar.imgSearch.setVisibility(View.GONE);
+                binding.layoutToolbar.viewBG.setVisibility(View.VISIBLE);
+                binding.layoutToolbar.imgCameraSearch.setOnClickListener(v -> {
+                    openOcrCamera();
+                });
+                binding.layoutToolbar.edtSearch.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        if (s == null || s.toString().equals("")) {
+                            binding.layoutToolbar.imgCameraSearch.setVisibility(View.VISIBLE);
+                            binding.layoutToolbar.imgCancel.setVisibility(View.INVISIBLE);
+                        } else {
+                            binding.layoutToolbar.imgCameraSearch.setVisibility(View.GONE);
+                            binding.layoutToolbar.imgCancel.setVisibility(View.VISIBLE);
+                            binding.layoutToolbar.imgCancel.setOnClickListener(v -> {
+                                binding.layoutToolbar.edtSearch.setText(null);
+                            });
+                        }
+
+                    }
+                });
+                binding.layoutToolbar.txtTitleToolbar.setVisibility(View.GONE);
                 break;
             default:
                 binding.layoutToolbar.imgBack.setImageResource(R.drawable.ic_arrow_back_purple_24dp);
@@ -124,8 +164,14 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 
 
     private void openSearchView() {
-        SearchFragmentContactDevice fragment = new SearchFragmentContactDevice();
-        push(fragment, Constants.FragmentTag.FRAGMENT_SEARCH, false);
+        SearchContactsFragment fragment = new SearchContactsFragment();
+        push(fragment, FragmentTag.FRAGMENT_SEARCH);
+    }
+
+    private void openOcrCamera() {
+        TextRecognitionFragment fragment = new TextRecognitionFragment();
+        push(fragment, FragmentTag.FRAGMENT_TEXT_RECOGNITION);
+        //startActivity(new Intent(MainActivity.this, TextRecognitionActivity.class));
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -182,7 +228,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             case R.id.imgBack:
                 pop();
                 break;
-            case R.id.imgSearch:        // Doing
+            case R.id.imgSearch:
+                //openSearchView();
+                break;
+            case R.id.imgCameraSearch:
+                //openOcrCamera();
+                break;
         }
     }
 }

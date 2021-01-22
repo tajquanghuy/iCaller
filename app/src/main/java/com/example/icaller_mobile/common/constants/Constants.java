@@ -95,6 +95,7 @@ public class Constants {
         Backable,
         OnlyText,
         BonusSearch,
+        SearchBar,
         None
     }
 }

@@ -3,6 +3,7 @@ package com.example.icaller_mobile.features.search_contacts;
 import androidx.databinding.library.baseAdapters.BR;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,15 +16,26 @@ import android.view.ViewGroup;
 
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
+import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.databinding.FragmentSearchContactsBinding;
+import com.example.icaller_mobile.features.block_list.BlockListViewModel;
+import com.example.icaller_mobile.features.main.MainViewModel;
 
-public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsBinding,SearchContactsViewModel> {
-
+public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsBinding, SearchContactsViewModel> {
+    private MainViewModel mainViewModel;
     private SearchContactsViewModel mViewModel;
+    private Context mContext;
 
     public static SearchContactsFragment newInstance() {
         return new SearchContactsFragment();
+    }
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.mContext = context;
     }
 
     @Override
@@ -38,7 +50,7 @@ public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsB
 
     @Override
     public Constants.ToolbarStyle getToolbarStyle() {
-        return null;
+        return Constants.ToolbarStyle.SearchBar;
     }
 
     @Override
@@ -48,20 +60,12 @@ public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsB
 
     @Override
     public SearchContactsViewModel getViewModel() {
-        return null;
+        mainViewModel = new ViewModelProvider(this, new ViewModelProviderFactory(requireContext())).get(MainViewModel.class);
+        return new ViewModelProvider(this, new ViewModelProviderFactory(requireContext())).get(SearchContactsViewModel.class);
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_search_contacts, container, false);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(SearchContactsViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }

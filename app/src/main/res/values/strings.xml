@@ -304,6 +304,7 @@
     <string name="title_contact">Danh bạ</string>
     <string name="title_block">Danh sách</string>
     <string name="title_setting">Cài đặt</string>
+    <string name="title_ocr_search">Tìm kiếm số điện thoại</string>
     <string name="navigation_settings">CÀI ĐẶT</string>
     <string name="title_profile">thông tin</string>
     <string name="dialog_confirm">Xác nhận</string>
@@ -317,6 +318,10 @@
     <string name="content_empty_otp">Vui lòng điền mã OTP</string>
     <string name="error_user_unprocessable" translatable="false">Unprocessable Entity</string>
     <string name="error_internal_server" translatable="false">Internal Server Error</string>
+    <string name="ocr_copy">Sao chép</string>
+    <string name="ocr_dial">Quay số</string>
+    <string name="ocr_clear">Xóa</string>
+    <string name="ocr_regex">Tạo lại</string>
     <!--    <string name="accept_and_continue">Đồng ý và tiếp tục</string>-->
     <!--    <string name="description_button_term">Chọn Đồng ý và tiếp tục với Điều khoản bảo mật và Điều khoản sử dụng của chúng tôi</string>-->
 

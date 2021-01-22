@@ -32,6 +32,11 @@
         <!--        <item name="android:fontFamily">@font/sfui_text_medium</item>-->
     </style>
 
+    <style name="searchStyle" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="android:queryHint">@string/key_search</item>
+        <item name="android:searchIcon" tools:targetApi="lollipop">@null</item>
+    </style>
+
     <style name="font_family_normal">
         <!--        <item name="android:fontFamily">@font/sfui_text_regular</item>-->
     </style>

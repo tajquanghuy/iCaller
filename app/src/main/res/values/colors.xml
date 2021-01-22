@@ -27,6 +27,7 @@
     <color name="bg_slide_menu_alpha">#857a95e6</color>
     <color name="bg_neck_up_normal">#F5C92C</color>
     <color name="bg_neck_up_normal_alpha">#85F5C92C</color>
+    <color name="color_opacity">#00000000</color>
 
     <array name="array_dot_active">
         <item>@color/lime_A200</item>
