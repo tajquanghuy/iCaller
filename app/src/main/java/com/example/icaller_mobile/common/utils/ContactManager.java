@@ -90,7 +90,7 @@ public class ContactManager {
         }
     }
 
-
+    // Danh bạ
     public IContactObject getDeviceContact(String phoneNumber) {
         if (!isContactAccessible() || phoneNumber == null || Utils.isEmpty(phoneNumber)) {
             return null;

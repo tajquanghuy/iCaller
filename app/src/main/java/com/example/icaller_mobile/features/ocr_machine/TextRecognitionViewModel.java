@@ -11,5 +11,6 @@ public class TextRecognitionViewModel extends BaseViewModel {
     public TextRecognitionViewModel(Context context) {
         super(context);
     }
+
     // TODO: Implement the ViewModel
 }

@@ -125,6 +125,10 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="SwitchCompatThemeee">
+        <item name="colorPrimary">@color/black</item>
+    </style>
+
     <!--    Style Edittext-->
     <style name="Custom_Edittext" parent="font_family_normal">
         <item name="colorControlActivated">@color/color_background</item>

@@ -1,16 +1,20 @@
 package com.example.icaller_mobile.features.ocr_machine;
 
 import android.Manifest;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -21,8 +25,12 @@ import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
+import com.example.icaller_mobile.common.constants.FragmentTag;
+import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.databinding.FragmentTextRecognitionBinding;
+import com.example.icaller_mobile.features.block_list.BlockListFragment;
 import com.example.icaller_mobile.features.main.MainViewModel;
+import com.example.icaller_mobile.features.settings.settings_about.AboutFragment;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
@@ -180,6 +188,10 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
 
     }
 
+    boolean myIsDigitsOnly(String str) {
+        return TextUtils.isDigitsOnly(str);
+    }
+
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder holder) {
         try {
@@ -201,7 +213,7 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
 
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
-
+        cameraSource.stop();
     }
 
     @Override
@@ -211,7 +223,9 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
 
     @Override
     public void receiveDetections(@NonNull Detector.Detections detections) {
-        SparseArray items = detections.getDetectedItems();
+        SparseArray items;
+        AboutFragment aboutFragment = AboutFragment.newInstance();
+        items = detections.getDetectedItems();
         final StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < items.size(); i++) {
             TextBlock item = (TextBlock) items.valueAt(i);
@@ -219,6 +233,22 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
             strBuilder.append(item.getValue());
             strBuilder.append("/");
 
+            String keyValue = item.getComponents().get(i).getValue();
+            char[] numbers = keyValue.toCharArray();
+            int sizeNumbers = numbers.length;
+            if (sizeNumbers == 10) {
+                if (myIsDigitsOnly(keyValue)) {
+                    //binding.sureFaceView.setVisibility(View.GONE);
+                    mActivity.push(aboutFragment, FragmentTag.FRAGMENT_PHONENUMBER_RECOGNITION);
+                    items = null;
+                    cameraSource.stop();
+                    check = false;
+//                    strBuilder.append(keyValue);
+//                    strBuilder.append("/");
+                }
+            }
+//            strBuilder.append(item.getValue());
+//            strBuilder.append("/");
         }
 
         //Regex Operation
@@ -242,6 +272,7 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
             }
 
         }
+        int a = 1;
         Log.v("strBuilder", strBuilder.toString());
         //Log.d("beeer", strBuilder.toString());
 
