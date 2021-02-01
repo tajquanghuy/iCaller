@@ -14,6 +14,7 @@ import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
+import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.common.utils.Utils;
 import com.example.icaller_mobile.databinding.FragmentAboutBinding;
 
@@ -56,6 +57,7 @@ public class AboutFragment extends BaseFragment<FragmentAboutBinding, AboutViewM
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Logger.log("ABOUT","ASDASD");
         String url;
         if (Locale.getDefault().getLanguage().equalsIgnoreCase("vi")) {
             url = "file:///android_asset/about_vn.html";

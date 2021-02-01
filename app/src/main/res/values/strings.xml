@@ -322,6 +322,7 @@
     <string name="ocr_dial">Quay số</string>
     <string name="ocr_clear">Xóa</string>
     <string name="ocr_regex">Tạo lại</string>
+    <string name="title_selection_phone">Vui lòng chọn một số</string>
     <!--    <string name="accept_and_continue">Đồng ý và tiếp tục</string>-->
     <!--    <string name="description_button_term">Chọn Đồng ý và tiếp tục với Điều khoản bảo mật và Điều khoản sử dụng của chúng tôi</string>-->
 

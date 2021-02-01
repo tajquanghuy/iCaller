@@ -271,5 +271,6 @@
     <string name="ocr_clear">Clear</string>
     <string name="ocr_regex">Regex</string>
     <string name="title_ocr_search">Searching for phone number</string>
+    <string name="title_selection_phone">Please choose a phone number</string>
 
 </resources>

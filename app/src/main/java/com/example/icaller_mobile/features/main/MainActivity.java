@@ -109,6 +109,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 binding.layoutToolbar.imgBack.setVisibility(View.GONE);
                 binding.layoutToolbar.imgSearch.setVisibility(View.INVISIBLE);
                 binding.layoutToolbar.txtTitleToolbar.setVisibility(View.VISIBLE);
+                binding.layoutToolbar.viewBG.setVisibility(View.GONE);
                 break;
             case None:
                 binding.layoutToolbar.viewBG.setVisibility(View.GONE);
@@ -153,6 +154,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 binding.layoutToolbar.txtTitleToolbar.setVisibility(View.GONE);
                 break;
             default:
+                binding.layoutToolbar.viewBG.setVisibility(View.GONE);
                 binding.layoutToolbar.imgBack.setImageResource(R.drawable.ic_arrow_back_purple_24dp);
                 binding.layoutToolbar.imgBack.setVisibility(View.VISIBLE);
                 binding.layoutToolbar.imgSearch.setImageResource(R.drawable.ic_search_purple);

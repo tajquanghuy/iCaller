@@ -18,9 +18,14 @@ import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
+import com.example.icaller_mobile.common.constants.IntentConstants;
+import com.example.icaller_mobile.common.utils.ContactManager;
 import com.example.icaller_mobile.databinding.FragmentSearchContactsBinding;
 import com.example.icaller_mobile.features.block_list.BlockListViewModel;
 import com.example.icaller_mobile.features.main.MainViewModel;
+import com.example.icaller_mobile.model.base.IContactObject;
+
+import java.util.ArrayList;
 
 public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsBinding, SearchContactsViewModel> {
     private MainViewModel mainViewModel;
@@ -67,5 +72,18 @@ public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsB
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ArrayList<String> phones = getArguments().getStringArrayList(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION);
+
+
     }
+
+
+    private void getPhoneNumberFromOCR(String phoneNumber) {
+        IContactObject contactDevice = ContactManager.getDefault().getDeviceContact(phoneNumber);
+        if (contactDevice != null) {
+
+        }
+    }
+
+
 }

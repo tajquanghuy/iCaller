@@ -1,20 +1,19 @@
 package com.example.icaller_mobile.features.ocr_machine;
 
 import android.Manifest;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -22,19 +21,23 @@ import androidx.databinding.library.baseAdapters.BR;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.icaller_mobile.R;
+import com.example.icaller_mobile.base.BaseActivity;
 import com.example.icaller_mobile.base.BaseFragment;
 import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
-import com.example.icaller_mobile.common.constants.FragmentTag;
+import com.example.icaller_mobile.common.constants.IntentConstants;
 import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.databinding.FragmentTextRecognitionBinding;
-import com.example.icaller_mobile.features.block_list.BlockListFragment;
 import com.example.icaller_mobile.features.main.MainViewModel;
 import com.example.icaller_mobile.features.settings.settings_about.AboutFragment;
+import com.example.icaller_mobile.model.models.ContactSearchOCR;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitionBinding, TextRecognitionViewModel> implements SurfaceHolder.Callback, Detector.Processor {
     private CameraSource cameraSource;
@@ -44,9 +47,14 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
     private TextRecognitionViewModel mViewModel;
     private MainViewModel mainViewModel;
     private Context mContext;
+    private ArrayList<String> contactSearchOCRS = new ArrayList<>();
+    ;
 
     public static TextRecognitionFragment newInstance() {
-        return new TextRecognitionFragment();
+        TextRecognitionFragment fragment = new TextRecognitionFragment();
+        Bundle bundle = new Bundle();
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
@@ -67,7 +75,7 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
 
     @Override
     public Constants.ToolbarStyle getToolbarStyle() {
-        return Constants.ToolbarStyle.OnlyText;
+        return Constants.ToolbarStyle.SearchBar;
     }
 
     @Override
@@ -127,15 +135,7 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
                 CallToMetallurgGates();
             }
         });
-//        binding.btnRegex.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (!check)
-//                    check = true;
-//                else
-//                    check = false;
-//            }
-//        });
+
         binding.btnRegex.setChecked(true);
         binding.btnRegex.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -144,6 +144,7 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
                     check = false;
                 } else {
                     check = true;
+                    cameraSource.release();
                 }
             }
         });
@@ -217,39 +218,54 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
     }
 
     @Override
-    public void release() {
-
+    public void onStop() {
+        super.onStop();
+        cameraSource.stop();
     }
+
+    @Override
+    public void release() {
+    }
+
 
     @Override
     public void receiveDetections(@NonNull Detector.Detections detections) {
         SparseArray items;
-        AboutFragment aboutFragment = AboutFragment.newInstance();
         items = detections.getDetectedItems();
         final StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < items.size(); i++) {
             TextBlock item = (TextBlock) items.valueAt(i);
-
             strBuilder.append(item.getValue());
             strBuilder.append("/");
-
-            String keyValue = item.getComponents().get(i).getValue();
+            String keyValue = item.getValue();
             char[] numbers = keyValue.toCharArray();
             int sizeNumbers = numbers.length;
             if (sizeNumbers == 10) {
                 if (myIsDigitsOnly(keyValue)) {
-                    //binding.sureFaceView.setVisibility(View.GONE);
-                    mActivity.push(aboutFragment, FragmentTag.FRAGMENT_PHONENUMBER_RECOGNITION);
-                    items = null;
-                    cameraSource.stop();
-                    check = false;
-//                    strBuilder.append(keyValue);
-//                    strBuilder.append("/");
+                    contactSearchOCRS.add(keyValue);
                 }
             }
-//            strBuilder.append(item.getValue());
-//            strBuilder.append("/");
         }
+
+        if (contactSearchOCRS.size()>1){
+            for (int i =0;i<contactSearchOCRS.size();i++){
+                String phone = contactSearchOCRS.get(i);
+
+            }
+        }else {
+            getPhoneNumberFromOCR(phones.get(0));
+        }
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                cameraSource.release();
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION, contactSearchOCRS);
+                ((BaseActivity<?, ?>) mContext).pop();
+            }
+        });
 
         //Regex Operation
         String str = strBuilder.toString();
