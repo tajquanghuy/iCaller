@@ -28,7 +28,7 @@ public class PhoneSelectionAdapter extends RecyclerView.Adapter<PhoneSelectionAd
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-
+        
     }
 
     @Override
@@ -48,5 +48,7 @@ public class PhoneSelectionAdapter extends RecyclerView.Adapter<PhoneSelectionAd
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
+        .
     }
+    .
 }
