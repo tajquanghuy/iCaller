@@ -12,6 +12,7 @@ import android.provider.ContactsContract;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.features.block_list.repository.BlockContactRepository;
 import com.example.icaller_mobile.model.base.IContactObject;
+import com.example.icaller_mobile.model.callbacks.GetDisplayNameCallBacks;
 import com.example.icaller_mobile.model.callbacks.GetRoomDataCallBacks;
 import com.example.icaller_mobile.model.local.room.BlockContact;
 import com.example.icaller_mobile.model.local.room.BlockContactDAO;
@@ -89,7 +90,7 @@ public class ContactManager {
         }
     }
 
-
+    // Danh bạ
     public IContactObject getDeviceContact(String phoneNumber) {
         if (!isContactAccessible() || phoneNumber == null || Utils.isEmpty(phoneNumber)) {
             return null;
@@ -138,7 +139,6 @@ public class ContactManager {
         if (!isContactAccessible() || phoneNumber == null || Utils.isEmpty(phoneNumber)) {
             return null;
         }
-
         Uri uri = Uri.withAppendedPath(ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
         String[] projection = new String[]{ContactsContract.PhoneLookup.DISPLAY_NAME};
         Cursor cursor = context.get().getContentResolver().query(uri, projection, ContactsContract.PhoneLookup.NUMBER + "=?", new String[]{phoneNumber}, ContactsContract.PhoneLookup.DISPLAY_NAME);
@@ -152,12 +152,21 @@ public class ContactManager {
         return name;
     }
 
+    public void getBlockedContactWithNumber(String number) {
+        BlockContactDB blockContactDB = BlockContactDB.getDatabase(context.get());
+        BlockContactDAO blockContactDAO = blockContactDB.blockContactDAO();
+        Disposable disposable = blockContactDAO.getContactLocal(number)
+                .subscribe(BlockContact::getName, throwable -> {
+                    int a = 1;
+                });
+    }
+
     public void zipObservable(String phoneNumber, GetRoomDataCallBacks dataCallBacks) {
         BlockContactDB dataBeanDB = BlockContactDB.getDatabase(context.get());
         DataBeanDAO dataBeanDAO = dataBeanDB.dataBeanDAO();
         BlockContactDB blockContactDB = BlockContactDB.getDatabase(context.get());
         BlockContactDAO blockContactDAO = blockContactDB.blockContactDAO();
-        Disposable disposable = Observable.zip(dataBeanDAO.getContactServer(phoneNumber), blockContactDAO.getContactDevice(phoneNumber), DataZip::new)
+        Disposable disposable = Observable.zip(dataBeanDAO.getContactServer(phoneNumber), blockContactDAO.getListContactLocal(phoneNumber), DataZip::new)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<DataZip>() {
@@ -165,11 +174,37 @@ public class ContactManager {
                     public void accept(DataZip dataZip) throws Exception {
                         if (dataZip.blockContacts.size() != 0) {
                             dataCallBacks.getUserFromDevice(dataZip.blockContacts.get(0));
-                        }
-                        else if (dataZip.dataBeans.size() != 0) {
+                        } else if (dataZip.dataBeans.size() != 0) {
                             dataCallBacks.getUserFromServer(dataZip.dataBeans.get(0));
                         } else {
                             dataCallBacks.getUnknowUser();
+                        }
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        int a = 1;
+                    }
+                });
+
+    }
+
+
+    public void zipObservableTwo(String phoneNumber, GetDisplayNameCallBacks callBacks) {
+        BlockContactDB dataBeanDB = BlockContactDB.getDatabase(context.get());
+        DataBeanDAO dataBeanDAO = dataBeanDB.dataBeanDAO();
+        BlockContactDB blockContactDB = BlockContactDB.getDatabase(context.get());
+        BlockContactDAO blockContactDAO = blockContactDB.blockContactDAO();
+        Disposable disposable = Observable.zip(dataBeanDAO.getContactServer(phoneNumber), blockContactDAO.getListContactLocal(phoneNumber), DataZip::new)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<DataZip>() {
+                    @Override
+                    public void accept(DataZip dataZip) throws Exception {
+                        if (dataZip.blockContacts.size() != 0) {
+                            callBacks.getUserFromDevice(dataZip.blockContacts.get(0));
+                        } else if (dataZip.dataBeans.size() != 0) {
+                            callBacks.getUserFromServer(dataZip.dataBeans.get(0));
                         }
                     }
                 }, new Consumer<Throwable>() {
@@ -205,11 +240,9 @@ public class ContactManager {
     }
 
     public boolean getDeviceContactAsync() {
-
         if (!isContactAccessible()) {
             return false;
         }
-
         executor.execute(() -> {
             List<IContactObject> contacts = getAllDeviceContacts();
             EventBus.getDefault().postSticky(ContactEventFactory.createDeviceContactReadyEvent(contacts));
@@ -331,11 +364,8 @@ public class ContactManager {
             }
             c.close();
         }
-
         Collections.sort(contacts, (o1, o2) -> o1.getGroup().compareTo(o2.getGroup()));
-
         contacts.addAll(otherGroup);
-
         return contacts;
     }
 

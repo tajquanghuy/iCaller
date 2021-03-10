@@ -16,4 +16,7 @@ public class FragmentTag {
     public static final String FRAGMENT_BLOCK_LIST = "FRAGMENT_BLOCK_LIST";
     public static final String FRAGMENT_DETAIL_CONTACT = "FRAGMENT_DETAIL_CONTACT";
     public static final String FRAGMENT_CURRENT_DATA = "FRAGMENT_CURRENT_DATA";
+    public static final String FRAGMENT_SEARCH = "FRAGMENT_SEARCH";
+    public static final String FRAGMENT_TEXT_RECOGNITION = "FRAGMENT_TEXT_RECOGNITION";
+    public static final String FRAGMENT_PHONENUMBER_RECOGNITION = "FRAGMENT_PHONENUMBER_RECOGNITION";
 }

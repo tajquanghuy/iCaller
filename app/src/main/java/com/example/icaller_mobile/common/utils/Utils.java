@@ -15,6 +15,7 @@ import android.telecom.TelecomManager;
 import android.telephony.TelephonyManager;
 import android.text.SpannableString;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -24,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 
 import com.android.internal.telephony.ITelephony;
+import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.constants.RequestCodeConstants;
 import com.karumi.dexter.Dexter;
@@ -32,6 +34,11 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -39,6 +46,7 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -65,6 +73,90 @@ public class Utils {
         return true;
     }
 
+    public static DateTime formatTimeFromString(String time) {
+        try {
+            return Constants.dateTimeFormatter.parseDateTime(time);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return Constants.dateTimeFormatter.parseDateTime(Constants.dateDefault);
+        }
+
+    }
+
+    public static String convertMinsToHours(int Mins, Context mContext) {
+        if (Mins == 0) {
+            return 0 + " " + mContext.getString(R.string.minute);
+        } else if (Mins <= 60) {
+            return Mins + " " + mContext.getString(R.string.minute);
+        }
+        return Mins / 60 + " " + mContext.getString(R.string.hour);
+    }
+
+    public static String formatTime(long time) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+        return dateTimeFormatter.print(time);
+    }
+
+    public static int getTimeCallBefore(long date) {
+        DateTime currentTime = DateTime.now();
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("HH:mm:ss");
+//        Logger.log(dateTimeFormatter.print(currentTime) + " " + dateTimeFormatter.print(date) + " " + Minutes.minutesBetween(new DateTime(date), currentTime).getMinutes());
+
+        return Minutes.minutesBetween(new DateTime(date), currentTime).getMinutes();
+    }
+
+
+    public static String numberPhoneFormat(String phone) {
+        if (phone == null) return null;
+        try {
+            String s = phone.trim();
+            String formattedNumber = "";
+            if (s.length() <= 3 || s.contains("*") || s.contains("#")) {
+                return s;
+            }
+            if (s.charAt(0) != '+') {
+                formattedNumber += s.substring(0, 3);
+                if (s.length() < 6) {
+                    formattedNumber += " " + s.substring(3);
+                }
+                if (s.length() >= 6) {
+                    formattedNumber += " " + s.substring(3, 6);
+                }
+                if (s.length() >= 8) {
+                    formattedNumber += " " + s.substring(6, 8);
+                }
+                if (s.length() >= 10) {
+                    formattedNumber += " " + s.substring(8);
+                }
+
+                return formattedNumber.trim();
+            } else {
+                formattedNumber += s.substring(0, 3);
+                if (s.length() < 5) {
+                    formattedNumber += " " + s.substring(3);
+                }
+                if (s.length() >= 5) {
+                    formattedNumber += " " + s.substring(3, 5);
+                }
+                if (s.length() >= 8) {
+                    formattedNumber += " " + s.substring(5, 8);
+                }
+                if (s.length() >= 10) {
+                    formattedNumber += " " + s.substring(8, 10);
+                }
+
+                if (s.length() >= 12) {
+                    formattedNumber += " " + s.substring(10);
+                }
+                return formattedNumber.trim();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
+    }
 
     public static boolean isServiceRunning(Class<?> serviceClass, Context context) {
         ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
@@ -78,6 +170,42 @@ public class Utils {
         }
         Logger.log("Service not", "running");
         return false;
+    }
+
+    public static String getWarnType(Context mContext, int type) {
+        String warnType = null;
+        switch (type) {
+            case 2:
+                warnType = mContext.getString(R.string.advertising);
+                break;
+            case 3:
+                warnType = mContext.getString(R.string.financial_service);
+                break;
+            case 4:
+                warnType = mContext.getString(R.string.loan_collection);
+                break;
+            case 5:
+                warnType = mContext.getString(R.string.scam);
+                break;
+            case 6:
+                warnType = mContext.getString(R.string.real_estate);
+                break;
+            case 7:
+                warnType = mContext.getString(R.string.other);
+                break;
+        }
+        return warnType;
+    }
+
+    public static boolean checkWarnType(int type) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(Constants.ReportType.REPORT_ADVERTISING.getType());
+        list.add(Constants.ReportType.REPORT_FINANCIAL_SERVICE.getType());
+        list.add(Constants.ReportType.REPORT_LOAN_COLLECTION.getType());
+        list.add(Constants.ReportType.REPORT_SCAM.getType());
+        list.add(Constants.ReportType.REPORT_REAL_ESTATE.getType());
+        list.add(Constants.ReportType.REPORT_OTHER.getType());
+        return list.contains(type);
     }
 
     public static void endCall(Context context) {
@@ -105,6 +233,17 @@ public class Utils {
                 tm.endCall();
             }
         }
+    }
+
+    /**
+     * This method converts dp unit to equivalent pixels, depending on device density.
+     *
+     * @param dp      A value in dp (density independent pixels) unit. Which we need to convert into pixels
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent px equivalent to dp depending on device density
+     */
+    public static float convertDpToPixel(float dp, Context context) {
+        return dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
 

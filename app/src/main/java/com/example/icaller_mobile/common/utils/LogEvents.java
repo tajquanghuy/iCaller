@@ -16,16 +16,14 @@ public class LogEvents {
         weakContext = new WeakReference<>(mContext);
     }
 
-    public static synchronized LogEvents init(Context mContext) {
+    public static synchronized LogEvents getDefault(Context mContext) {
         if (logEvents == null) {
             logEvents = new LogEvents(mContext);
         }
         return logEvents;
     }
 
-    public static synchronized LogEvents getDefault() {
-        return logEvents;
-    }
+
 
     public void log(String event, Bundle bundle) {
         if (weakContext.get() == null || event == null || Utils.isEmpty(event)) return;

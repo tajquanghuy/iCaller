@@ -24,7 +24,6 @@ import io.reactivex.disposables.Disposable;
 public class BlockListViewModel extends BaseViewModel {
     private BlockContactRepository repository;
     public MutableLiveData<List<BlockContact>> listBlockContact = new MutableLiveData<>();
-    public MutableLiveData<BlockContact> blockContacts = new MutableLiveData<>();
 
 
     public BlockListViewModel(Context context) {
@@ -45,7 +44,7 @@ public class BlockListViewModel extends BaseViewModel {
     public void getContactByPhoneNumber(String phone) {
         BlockContactDB blockContactDB = BlockContactDB.getDatabase(context.get());
         BlockContactDAO blockContactDAO = blockContactDB.blockContactDAO();
-        Disposable disposable = blockContactDAO.getContactDevice(phone)
+        Disposable disposable = blockContactDAO.getListContactLocal(phone)
                 .subscribe(contact -> {
                     int a = 1;
                 }, throwable -> {

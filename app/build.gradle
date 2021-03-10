@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
+    implementation project(path: ':saferoom')
 
     // Room Database
     def room_version = "2.2.5"
@@ -153,5 +154,13 @@ dependencies {
 
     //OTP pinview
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
+
+    //SQLcipher
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite:2.1.0"
+
+    //ML kit - ocr
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.2'
+    implementation 'com.google.firebase:firebase-ml-vision:'
 
 }

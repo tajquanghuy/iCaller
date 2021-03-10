@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_decrypt_room_db" translatable="false">"123456"</string>
+</resources>

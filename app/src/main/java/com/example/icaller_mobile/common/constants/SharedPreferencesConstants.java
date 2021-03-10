@@ -18,6 +18,7 @@ public class SharedPreferencesConstants {
 
     public static final String KEY_LAST_UPDATE_DB_DAILY = "KEY_LAST_UPDATE_DB_DAILY";
     public static final String KEY_UPDATE_DAILY_SUCCEED = "KEY_UPDATE_DAILY_SUCCEED";
+    public static final String KEY_DATE_UPLOAD_HISTORY = "KEY_DATE_UPLOAD_HISTORY";
 
     public static final String KEY_DATA_PAGE_DOWNLOAD = "KEY_DATA_PAGE_DOWNLOAD";
     public static final String KEY_ID_LASTEST_CURRENT = "KEY_ID_LASTEST_CURRENT";
@@ -32,6 +33,7 @@ public class SharedPreferencesConstants {
     public static final String KEY_BLOCK_SETTING_ADVERTISING = "KEY_BLOCK_SETTING_ADVERTISING";
     public static final String KEY_BLOCK_SETTING_OUT_CONTACT = "KEY_BLOCK_SETTING_OUT_CONTACT";
     public static final String KEY_BLOCK_SETTING_FOREIGN_NUMBER = "KEY_BLOCK_SETTING_FOREIGN_NUMBER";
+
 
     public static class FragmentTag {
         public static final String FRAGMENT_CALLLOG = "FRAGMENT_CALLLOG";

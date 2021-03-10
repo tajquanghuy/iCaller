@@ -19,7 +19,6 @@ import java.util.List;
 public class ItemContactsAdapter extends RecyclerSwipeAdapter<ItemContactsAdapter.ViewHolder> {
     private Context mContext;
     private List<IContactObject> mData;
-    ;
 
     public ItemContactsAdapter(Context mContext) {
         this.mContext = mContext;

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.icaller_mobile">
+
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,7 +21,10 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="ocr"/>
 
     <application
         android:allowBackup="true"
@@ -32,6 +37,7 @@
         <activity android:name=".features.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,7 +46,6 @@
             android:name=".common.service.GetDBService"
             android:exported="false"
             android:foregroundServiceType="location" />
-
         <service
             android:name=".features.popup.OverlayShowingService"
             android:exported="false" />
@@ -55,7 +60,7 @@
                 <action android:name="android.intent.action.ACTION_USER_PRESENT" />
                 <action android:name="android.intent.action.ACTION_SCREEN_ON" />
                 <action android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
     </application>

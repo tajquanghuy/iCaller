@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.icaller_mobile.features.after_call.AfterCallViewModel;
 import com.example.icaller_mobile.features.authenticate.LoginViewModel;
 import com.example.icaller_mobile.features.block_contact.CreateBlockContactViewModel;
 import com.example.icaller_mobile.features.block_detail.DetailContactViewModel;
@@ -14,6 +15,8 @@ import com.example.icaller_mobile.features.current_data.CurrentDataViewModel;
 import com.example.icaller_mobile.features.dialpad.DialpadViewModel;
 import com.example.icaller_mobile.features.history.HistoryViewModel;
 import com.example.icaller_mobile.features.main.MainViewModel;
+import com.example.icaller_mobile.features.ocr_machine.TextRecognitionViewModel;
+import com.example.icaller_mobile.features.search_contacts.SearchContactsViewModel;
 import com.example.icaller_mobile.features.settings.SettingsViewModel;
 import com.example.icaller_mobile.features.settings.settings_about.AboutViewModel;
 import com.example.icaller_mobile.features.settings.settings_faq.FAQViewModel;
@@ -67,6 +70,15 @@ public class ViewModelProviderFactory extends ViewModelProvider.NewInstanceFacto
         } else if (modelClass.isAssignableFrom(ContactsViewModel.class)) {
             //noinspection unchecked
             return (T) new ContactsViewModel(context);
+        }else if (modelClass.isAssignableFrom(AfterCallViewModel.class)) {
+            //noinspection unchecked
+            return (T) new AfterCallViewModel(context);
+        }else if (modelClass.isAssignableFrom(SearchContactsViewModel.class)) {
+            //noinspection unchecked
+            return (T) new SearchContactsViewModel(context);
+        }else if (modelClass.isAssignableFrom(TextRecognitionViewModel.class)) {
+            //noinspection unchecked
+            return (T) new TextRecognitionViewModel(context);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }

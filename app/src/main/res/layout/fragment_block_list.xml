@@ -365,7 +365,7 @@
         <!--            ads:layout_constraintTop_toBottomOf="@id/img_block_setting_foreign_number" />-->
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvContact"
+            android:id="@+id/rvContacts"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@android:color/white"

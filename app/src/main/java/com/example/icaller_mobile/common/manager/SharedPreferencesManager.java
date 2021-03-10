@@ -110,6 +110,14 @@ public class SharedPreferencesManager {
         savePreference(SharedPreferencesConstants.KEY_DATA_PAGE_DOWNLOAD, page);
     }
 
+    public String getDateUploadHistory() {
+        return (String) getPreference(SharedPreferencesConstants.KEY_DATE_UPLOAD_HISTORY, Constants.dateDefault);
+    }
+
+    public void saveDateUploadHistory(String date) {
+        savePreference(SharedPreferencesConstants.KEY_DATE_UPLOAD_HISTORY, date);
+    }
+
     public String getApiToken() {
         return (String) getPreference(SharedPreferencesConstants.KEY_API_TOKEN, "");
     }

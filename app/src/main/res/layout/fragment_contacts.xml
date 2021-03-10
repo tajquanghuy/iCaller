@@ -10,33 +10,78 @@
             type="com.example.icaller_mobile.features.contacts.ContactsViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true">
+        android:background="@color/black">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvContacts"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/item_contact"
-            android:background="@color/white"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvContacts"
+                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_contact"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:id="@+id/img_no_permission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="64dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/key_contact_permission" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_autorenew_black_24dp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/key_no_data"
+                android:textColor="@color/color_black_light"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
 
         <com.example.icaller_mobile.common.custom_view.MovableFloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/_16sdp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_add_contact_block_white"
+            android:src="@drawable/ic_add_contact_white"
             app:backgroundTint="@color/color_purple_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:maxImageSize="24dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </layout>

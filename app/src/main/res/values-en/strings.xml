@@ -266,5 +266,11 @@
     <string name="content_verification_fail">Error verification code</string>
     <string name="otp_is_empty">OTP is empty</string>
     <string name="content_empty_otp">Please enter OTP code </string>
+    <string name="ocr_copy">Copy</string>
+    <string name="ocr_dial">Dial</string>
+    <string name="ocr_clear">Clear</string>
+    <string name="ocr_regex">Regex</string>
+    <string name="title_ocr_search">Searching for phone number</string>
+    <string name="title_selection_phone">Please choose a phone number</string>
 
 </resources>

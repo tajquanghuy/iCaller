@@ -412,7 +412,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
                                                         Logger.log("CHECK");
                                                         Bundle bundle = new Bundle();
                                                         bundle.putString(FirebaseConstants.PARAM_PHONENUMBER, phoneNumber);
-                                                        LogEvents.getDefault().log(FirebaseConstants.EVENT_LOGIN_SUCCESSED, bundle);
+                                                        LogEvents.getDefault(LoginActivity.this).log(FirebaseConstants.EVENT_LOGIN_SUCCESSED, bundle);
                                                         LoadingDialogManager.getDefault(mLoginActivity).hideDialog();
                                                         hideOtpView();
 

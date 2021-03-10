@@ -10,6 +10,7 @@
     <color name="white">#FFFFFF</color>
     <color name="white_75">#77FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="bg_phone_selection">#4C4A4A</color>
     <color name="actionbar_text_color">#ffffff</color>
     <color name="color_play_button">#dd1E88E5</color>
     <color name="blue_90">#78d3ff</color>
@@ -27,6 +28,7 @@
     <color name="bg_slide_menu_alpha">#857a95e6</color>
     <color name="bg_neck_up_normal">#F5C92C</color>
     <color name="bg_neck_up_normal_alpha">#85F5C92C</color>
+    <color name="color_opacity">#00000000</color>
 
     <array name="array_dot_active">
         <item>@color/lime_A200</item>
@@ -384,5 +386,7 @@
     <color name="color_text_setting_block">#444444</color>
     <color name="color_background_notification">#F34949</color>
     <color name="color_text_dismiss_notification">#B63737</color>
+
+    <color name="color_grey">#E7EBEF</color>
 
 </resources>

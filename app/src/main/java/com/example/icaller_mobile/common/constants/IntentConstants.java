@@ -10,4 +10,7 @@ public class IntentConstants {
     public static final String KEY_BLOCK_LIST_FRAGMENT_PHONE_NUMBER = "KEY_BLOCK_LIST_FRAGMENT_PHONE_NUMBER";
     public static final String KEY_BLOCK_LIST_FRAGMENT_TYPE = "KEY_BLOCK_LIST_FRAGMENT_TYPE";
     public static final String KEY_PHONE_NUMBER = "KEY_PHONE_NUMBER";
+
+    // Bunlde
+    public static final String KEY_PHONE_NUMBER_RECOGNITION = "KEY_PHONE_NUMBER";
 }

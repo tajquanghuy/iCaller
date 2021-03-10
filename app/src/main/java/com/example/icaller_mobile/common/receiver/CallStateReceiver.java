@@ -47,8 +47,8 @@ public class CallStateReceiver extends BroadcastReceiver {
                     incomingFlag = true;
                     incoming_number = intent.getStringExtra("incoming_number");
                     Logger.log("CALL_STATE_RINGING - " + incoming_number);
-                    Intent intent1 = new Intent(context, CallInfoOverlay.class);
-                    intent1.putExtra(IntentConstants.KEY_PHONE_NUMBER, incoming_number);
+                    Intent itCallInfoOverlay = new Intent(context, CallInfoOverlay.class);
+                    itCallInfoOverlay.putExtra(IntentConstants.KEY_PHONE_NUMBER, incoming_number);
                     callInfoOverlay.onExtractCallerInformation(incoming_number);
                     break;
                 case TelephonyManager.CALL_STATE_OFFHOOK:
@@ -61,6 +61,9 @@ public class CallStateReceiver extends BroadcastReceiver {
                         Logger.log("CALL_STATE_IDLE - " + incoming_number);
                         callInfoOverlay.onDestroyOverPlay(incoming_number);
                     }
+//                    Intent itAfterCall = new Intent(context, AfterCallActivity.class);
+//                    itAfterCall.putExtra(IntentConstants.KEY_PHONE_NUMBER,incoming_number);
+//                    context.startActivity(itAfterCall);
                     break;
             }
         }
