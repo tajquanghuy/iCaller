@@ -68,20 +68,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     }
 
 
-    private void initializeSQLCipher() {
-        Logger.log("Key", "decryptDatabase: " + getText(R.string.key_decrypt_room_db).toString());
-        SQLiteDatabase.loadLibs(this);
-        File databaseFile = getDatabasePath("db_contact_block");
-        SQLCipherUtils.State state = SQLCipherUtils.getDatabaseState(databaseFile);
-        if (state.equals(SQLCipherUtils.State.ENCRYPTED)) {
-            try {
-                Logger.log("Database", "decryptDatabase: " + SQLCipherUtils.getDatabaseState(databaseFile));
-                SQLCipherUtils.decrypt(this, databaseFile, getText(R.string.key_decrypt_room_db).toString().toCharArray());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     @Override
     public void getToolbarStyle(Constants.ToolbarStyle style) {

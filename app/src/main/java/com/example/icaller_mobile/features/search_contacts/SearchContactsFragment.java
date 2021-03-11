@@ -1,18 +1,12 @@
 package com.example.icaller_mobile.features.search_contacts;
 
-import androidx.databinding.library.baseAdapters.BR;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.databinding.library.baseAdapters.BR;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.icaller_mobile.R;
 import com.example.icaller_mobile.base.BaseFragment;
@@ -20,12 +14,10 @@ import com.example.icaller_mobile.base.ViewModelProviderFactory;
 import com.example.icaller_mobile.common.constants.Constants;
 import com.example.icaller_mobile.common.constants.IntentConstants;
 import com.example.icaller_mobile.common.utils.ContactManager;
+import com.example.icaller_mobile.common.utils.Utils;
 import com.example.icaller_mobile.databinding.FragmentSearchContactsBinding;
-import com.example.icaller_mobile.features.block_list.BlockListViewModel;
 import com.example.icaller_mobile.features.main.MainViewModel;
 import com.example.icaller_mobile.model.base.IContactObject;
-
-import java.util.ArrayList;
 
 public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsBinding, SearchContactsViewModel> {
     private MainViewModel mainViewModel;
@@ -33,7 +25,10 @@ public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsB
     private Context mContext;
 
     public static SearchContactsFragment newInstance() {
-        return new SearchContactsFragment();
+        SearchContactsFragment fragment = new SearchContactsFragment();
+        Bundle bundle = new Bundle();
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
 
@@ -72,16 +67,23 @@ public class SearchContactsFragment extends BaseFragment<FragmentSearchContactsB
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ArrayList<String> phones = getArguments().getStringArrayList(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION);
+        //String phoneNumber = getArguments().getString(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION);
+        String phoneNumber = "0364849979";
+        if (!phoneNumber.isEmpty()){
+            getPhoneNumberFromOCR(phoneNumber);
+        }
 
+        //ArrayList<String> phones = getArguments().getStringArrayList(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION);
 
     }
 
 
     private void getPhoneNumberFromOCR(String phoneNumber) {
+        String displayName;
         IContactObject contactDevice = ContactManager.getDefault().getDeviceContact(phoneNumber);
         if (contactDevice != null) {
-
+            displayName = (contactDevice.getName() == null || Utils.isEmpty(contactDevice.getName())) ? Utils.Number(phoneNumber) : contactDevice.getName();
+            binding.txtName.setText(displayName);
         }
     }
 

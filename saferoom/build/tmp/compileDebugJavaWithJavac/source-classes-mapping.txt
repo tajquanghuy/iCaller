@@ -10,8 +10,9 @@ com/commonsware/cwac/saferoom/Helper.java
  com.commonsware.cwac.saferoom.Helper$OpenHelper$2
 com/commonsware/cwac/saferoom/Statement.java
  com.commonsware.cwac.saferoom.Statement
-com/commonsware/cwac/saferoom/BuildConfig.java
- com.commonsware.cwac.saferoom.BuildConfig
+com/commonsware/cwac/saferoom/SQLCipherUtils.java
+ com.commonsware.cwac.saferoom.SQLCipherUtils
+ com.commonsware.cwac.saferoom.SQLCipherUtils$State
 com/commonsware/cwac/saferoom/SafeHelperFactory.java
  com.commonsware.cwac.saferoom.SafeHelperFactory
  com.commonsware.cwac.saferoom.SafeHelperFactory$1
@@ -21,6 +22,5 @@ com/commonsware/cwac/saferoom/Program.java
  com.commonsware.cwac.saferoom.Program
 com/commonsware/cwac/saferoom/BindingsRecorder.java
  com.commonsware.cwac.saferoom.BindingsRecorder
-com/commonsware/cwac/saferoom/SQLCipherUtils.java
- com.commonsware.cwac.saferoom.SQLCipherUtils
- com.commonsware.cwac.saferoom.SQLCipherUtils$State
+com/commonsware/cwac/saferoom/BuildConfig.java
+ com.commonsware.cwac.saferoom.BuildConfig

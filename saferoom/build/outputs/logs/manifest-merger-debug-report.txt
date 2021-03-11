@@ -1,39 +1,39 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:1-8:12
 	package
-		ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:2:2-41
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
+		ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:2:2-41
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:4:2-27
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
+		ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:4:2-27
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:1:11-69
 	android:versionCode
-		ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:3:2-25
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
+		ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:3:2-25
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
 application
-ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml:6:2-17
+ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml:6:2-17
 uses-sdk
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		ADDED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
-		INJECTED from E:\PrjAndroid\iCaller_byPigLLet\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		ADDED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\huytq\Documents\iCaller\saferoom\src\main\AndroidManifest.xml

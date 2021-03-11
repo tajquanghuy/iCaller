@@ -29,15 +29,13 @@ import com.example.icaller_mobile.common.constants.IntentConstants;
 import com.example.icaller_mobile.common.utils.Logger;
 import com.example.icaller_mobile.databinding.FragmentTextRecognitionBinding;
 import com.example.icaller_mobile.features.main.MainViewModel;
-import com.example.icaller_mobile.features.settings.settings_about.AboutFragment;
-import com.example.icaller_mobile.model.models.ContactSearchOCR;
+import com.example.icaller_mobile.features.search_contacts.SearchContactsFragment;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitionBinding, TextRecognitionViewModel> implements SurfaceHolder.Callback, Detector.Processor {
     private CameraSource cameraSource;
@@ -48,7 +46,6 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
     private MainViewModel mainViewModel;
     private Context mContext;
     private ArrayList<String> contactSearchOCRS = new ArrayList<>();
-    ;
 
     public static TextRecognitionFragment newInstance() {
         TextRecognitionFragment fragment = new TextRecognitionFragment();
@@ -242,30 +239,32 @@ public class TextRecognitionFragment extends BaseFragment<FragmentTextRecognitio
             int sizeNumbers = numbers.length;
             if (sizeNumbers == 10) {
                 if (myIsDigitsOnly(keyValue)) {
-                    contactSearchOCRS.add(keyValue);
+                    //contactSearchOCRS.add(keyValue);
+                    Logger.log(keyValue);
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            cameraSource.release();
+                            SearchContactsFragment fragment = new SearchContactsFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putString(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION, keyValue);
+                            fragment.setArguments(bundle);
+                            ((BaseActivity<?, ?>) mContext).pop();
+                        }
+                    });
                 }
             }
         }
 
-        if (contactSearchOCRS.size()>1){
-            for (int i =0;i<contactSearchOCRS.size();i++){
-                String phone = contactSearchOCRS.get(i);
+//        if (contactSearchOCRS.size()>1){
+//            for (int i =0;i<contactSearchOCRS.size();i++){
+//                String phone = contactSearchOCRS.get(i);
+//            }
+//        }else {
+//            getPhoneNumberFromOCR(phones.get(0));
+//        }
 
-            }
-        }else {
-            getPhoneNumberFromOCR(phones.get(0));
-        }
-
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                cameraSource.release();
-                Bundle bundle = new Bundle();
-                bundle.putStringArrayList(IntentConstants.KEY_PHONE_NUMBER_RECOGNITION, contactSearchOCRS);
-                ((BaseActivity<?, ?>) mContext).pop();
-            }
-        });
 
         //Regex Operation
         String str = strBuilder.toString();
